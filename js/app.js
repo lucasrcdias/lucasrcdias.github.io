@@ -44,15 +44,21 @@ $(function(){
     }
     else{
       element.removeClass("fixed-controls");
+      $(".search-controls").fadeIn();
       $(".show-controls, .back-to-top").fadeOut();
     }
   });
   
   $(".show-controls").click(function(){
     var x = $(".fixed-controls");
-    if($(x).is(":visible"))
+    if($(x).is(":visible")){
+      $(this).html("<i class=\"fa fa-search\"></i>");
       $(x).fadeOut();
-    else $(x).fadeIn();
+    }
+    else{ 
+      $(this).html("<i class=\"fa fa-close\"></i>");  
+      $(x).fadeIn();
+    }
   });
   
   $(".back-to-top").click(function(){
