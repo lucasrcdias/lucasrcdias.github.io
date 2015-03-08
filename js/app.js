@@ -64,9 +64,7 @@ $(function(){
   $(".more").click(function(){
     toggleMore($(this).data("more"));
   });
-  
-  $("html").niceScroll();
-  
+    
   function toggleMore(id){
     var el = $("#"+ id);
     if(el.is(":visible"))
