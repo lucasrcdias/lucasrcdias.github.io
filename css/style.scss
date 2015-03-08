@@ -1,0 +1,562 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+
+@mixin prefixo($p,$v) {
+  -webkit-#{$p}: $v;
+  -moz-#{$p}: $v;
+  -o-#{$p}: $v;
+  -ms-#{$p}: $v;
+  #{$p}: $v;
+}
+
+$peter-river: #2980b9;
+$belize-hole:#3498db;
+$emerald: #2ecc71;
+$nephritis: #27ae60;
+$wet-asphalt: #34495e;
+$midnight-blue: #2c3e50;
+$turquoise: #1abc9c;
+$green-sea: #16a085;
+$youtube-red: #bb0000;
+$youtube-darken-red: #800000;
+$white: #FFF;
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
+$grey: #f1f1f1;
+$black: #000;
+$mid-black: #333;
+$header-content-bg-color: $peter-river;
+$nav-bg-color: $belize-hole;
+$input-bg-color: $white;
+$input-border-color: $silver;
+$input-border-color-focus: $midnight-blue;
+$search-button-bg-color: $emerald;
+$search-button-border-color: $nephritis;
+$search-button-bg-color-hover: $turquoise;
+$search-button-border-color-hover: $green-sea;
+$search-toggle-bg-color: $youtube-red;
+$search-toggle-bg-color-hover: $youtube-darken-red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $midnight-blue;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+header {
+  z-index: 1;
+  height: 100vh;
+  background-image: url('../img/main-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  .wrapper {
+    z-index: 2;
+    .header-content {
+      h1, h2 {
+        color: $white;
+        text-shadow: 0 0 10px $black;
+        display: block;
+      }
+      h1.main-title {
+        font-weight: 900;
+      }
+      h2.main-subtitle {
+        font-size: 1.6em;
+        font-weight: 500;
+      }
+      .search-controls {
+        width: 100%;
+        text-align: center;
+        margin-top: 2em;
+        .controls {
+          margin: 0 auto;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  .wrapper {
+    text-align: center;
+    h1 {
+      font-size: 3em;
+      color: $white;
+      margin-top: 2em;
+    }
+  }
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background-color: $input-bg-color;
+  border-bottom: 3px solid $input-border-color;
+  padding: 1em 2em;
+  float: left;
+  width: 85%;
+  @include prefixo(transition, .3s all ease);
+}
+
+button {
+  @include prefixo(transition, .6s all ease);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+button.search-button {
+  width: 15%;
+  background-color: $search-button-bg-color;
+  border-bottom: 3px solid $search-button-border-color;
+  color: $white;
+  float: left;
+  padding: 1em;
+}
+
+.voice-search {
+  position: absolute;
+  bottom: 2em;
+  width: 72px;
+  height: 72px;
+  left: 50%;
+  margin-left: -36px;
+}
+
+.close{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  i{
+    color: $white;
+    font-size: 2em;
+  }
+}
+
+div.clicked {
+  @include prefixo(transition, .5s all ease);
+  @include prefixo(transform, scale(2));
+  button{
+    @include prefixo(animation, blink-effect 1s infinite);
+  }
+}
+
+button.search-toggle {
+  @include prefixo(border-radius, 100%);
+  background-color: $search-toggle-bg-color;
+  padding: 2em 2.2em;
+  outline: none;
+  i {
+    color: $white;
+    font-size: 1.6em;
+  }
+  &:hover {
+    background-color: $youtube-darken-red;
+  }
+}
+
+button i {
+  color: $white;
+}
+
+.results{
+  display: none;
+  position: relative;
+  padding-top: 6em;
+  padding-bottom: 2em;
+  background-color: $grey;
+  min-height: 100vh;
+  h1{
+    color: $black;
+    font-weight: 300;
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: 2em;
+  }
+  .result{
+    width: 100%;
+    .infos{
+      @include prefixo(box-shadow, 0 1px 2px rgba(0,0,0,.1));
+      background-color: $belize-hole;
+      overflow: hidden;
+      div{
+        float: left;
+        min-height: 35px;
+        border-right: 1px solid $silver;
+        &:last-child{
+          border-right: none;
+        }
+      }
+      .numero,
+      .more{
+        color: $white;
+        font-weight: 600;
+        text-align: center;
+      }
+      .nome,
+      .sentido{
+        background-color: $white;
+      }
+      .more{
+        @include prefixo(transition, .5s all ease);
+        cursor: pointer;
+        &:hover{
+          background-color: $peter-river;
+        }
+      }
+    }
+    .more-infos{
+      display: none;
+      border-top: 1px solid $silver;
+      background-color: $white;
+      overflow: hidden;
+      section.horarios{
+        overflow: hidden;
+        .horario{
+          float: left;
+          padding: 1em; 
+          min-height: 100px;
+          border-right: 1px solid $silver;
+          h2{
+            font-weight: 400;
+            font-size: 1em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          }
+          &:last-child{
+            border-right: none;
+          }
+          table{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            
+            td{
+              border: 1px solid $peter-river;
+              text-align: center;
+              vertical-align: middle;
+              color: $mid-black;
+              padding: 8px 5px;
+            }
+            thead{
+              background-color: $peter-river;
+            }
+            tbody{
+              background-color: $white;
+            }
+          }
+        }
+      }
+    }
+    .itinerario{
+      border-top: 1px solid $silver;
+      width: 100%;
+      padding: 1em;
+      h2{
+        font-weight: 400;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      p{ 
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 1em;
+        line-height: 1.4em;
+        color: $mid-black;
+      }
+    }
+    .ver-mapa{
+      @include prefixo(transition, .5s all ease);
+      background-color: $belize-hole;
+      width: 100%;
+      padding: 1em;
+      color: $white;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      &:hover{
+        background-color: $peter-river;
+      }
+    }
+    margin-bottom: 2em;
+  }
+}
+
+.container{
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.fixed-controls{
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+button.show-controls{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+button.back-to-top{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  background-color: $belize-hole;
+  border-bottom: 2px solid $peter-river;
+  padding: 1em;
+  i{
+    font-size: 2em;
+  }
+}
+//smartphones
+@media screen and (max-width: 768px) {
+  .fixed-controls{
+    .controls{
+      input[type="text"]{width: 70%;}
+    }
+  }
+  
+  .header-content {
+    text-align: center;
+    width: 100%;
+    padding-top: 2em;
+    h1.main-title {
+      font-size: 3em;
+    }
+    .controls {
+      max-width: 95%;
+    }
+  }
+  .horario{
+    width: 100%;
+  }
+  .container{
+    max-width: 95%;
+  }
+  .show-controls,
+  .back-to-top{
+    width: 15%;
+  }
+  .result{
+    .infos{
+      div{padding: .5em;}
+      .numero{
+        width: 30%;
+      }
+      .nome{
+        width: 70%;
+      }
+      .sentido{
+        width: 87%;
+      }
+      .more{
+        width: 13%;
+      }
+    }
+  }
+}
+
+//tablet portrait
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    .header-content {
+      text-align: center;
+      width: 100%;
+      padding-top: 12em;
+      h1.main-title {
+        font-size: 3em;
+      }
+      .controls {
+        max-width: 95%;
+      }
+    }
+  }
+  .voice-search {
+    bottom: 6em;
+  }
+  .horario{
+    width: 50%;
+  }
+  .result{
+    .infos{
+      div{padding: 1em;}
+      .numero,
+      .more{
+        width: 10%;
+      }
+      .nome,
+      .sentido{
+        width: 40%;
+      }
+    }
+  }
+  button.show-controls,
+  button.back-to-top{
+    width: 5%;
+  }
+  
+  .fixed-controls{
+    right: -6.5em;
+  }
+}
+
+//tablet landscape and higher
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    z-index: 2;
+    display: table;
+    width: 100%;
+    height: 100vh;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .header-content {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      width: 100%;
+      h1.main-title {
+        font-size: 4em;
+      }
+      .controls {
+        max-width: 50%;
+      }
+    }
+  }
+  .horario{
+    width: 33%;
+  }
+  
+  .result{
+    .infos{
+      div{padding: 1em;}
+      .numero,
+      .more{
+        width: 10%;
+      }
+      .nome,
+      .sentido{
+        width: 40%;
+      }
+    }
+  }
+  
+  button.show-controls,
+  button.back-to-top{
+    width: 5%;
+  }
+  
+  .fixed-controls{
+    right: -6.5em;
+    .controls{
+    width: 50%;
+    float: right;
+    input[type="text"]{
+      width: 45%;
+    }
+  }
+}
+}
+//animation
+@-webkit-keyframes blink-effect {
+  0% {
+    box-shadow: none;
+  }
+  10% {
+    box-shadow: 0 0 2px $youtube-red;
+  }
+  20% {
+    box-shadow: 0 0 4px $youtube-red;
+  }
+  30% {
+    box-shadow: 0 0 6px $youtube-red;
+  }
+  40% {
+    box-shadow: 0 0 8px $youtube-red;
+  }
+  50% {
+    box-shadow: 0 0 10px $youtube-red;
+  }
+  60% {
+    box-shadow: 0 0 8px $youtube-red;
+  }
+  70% {
+    box-shadow: 0 0 6px $youtube-red;
+  }
+  80% {
+    box-shadow: 0 0 4px $youtube-red;
+  }
+  90% {
+    box-shadow: 0 0 2px $youtube-red;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes blink-effect {
+  0% {
+    box-shadow: none;
+  }
+  10% {
+    box-shadow: 0 0 2px $youtube-red;
+  }
+  20% {
+    box-shadow: 0 0 4px $youtube-red;
+  }
+  30% {
+    box-shadow: 0 0 6px $youtube-red;
+  }
+  40% {
+    box-shadow: 0 0 8px $youtube-red;
+  }
+  50% {
+    box-shadow: 0 0 10px $youtube-red;
+  }
+  60% {
+    box-shadow: 0 0 8px $youtube-red;
+  }
+  70% {
+    box-shadow: 0 0 6px $youtube-red;
+  }
+  80% {
+    box-shadow: 0 0 4px $youtube-red;
+  }
+  90% {
+    box-shadow: 0 0 2px $youtube-red;
+  }
+  100% {
+    box-shadow: none;
+  }
+}

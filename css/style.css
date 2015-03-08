@@ -1,0 +1,569 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+/* line 39, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* line 45, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+body {
+  background-color: #2c3e50;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 14px; }
+
+/* line 52, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+header {
+  z-index: 1;
+  height: 100vh;
+  background-image: url('../img/main-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; }
+  /* line 58, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  header .wrapper {
+    z-index: 2; }
+    /* line 61, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    header .wrapper .header-content h1, header .wrapper .header-content h2 {
+      color: #FFF;
+      text-shadow: 0 0 10px #000;
+      display: block; }
+    /* line 66, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    header .wrapper .header-content h1.main-title {
+      font-weight: 900; }
+    /* line 69, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    header .wrapper .header-content h2.main-subtitle {
+      font-size: 1.6em;
+      font-weight: 500; }
+    /* line 73, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    header .wrapper .header-content .search-controls {
+      width: 100%;
+      text-align: center;
+      margin-top: 2em; }
+      /* line 77, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      header .wrapper .header-content .search-controls .controls {
+        margin: 0 auto;
+        overflow: hidden; }
+
+/* line 86, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7); }
+  /* line 94, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .overlay .wrapper {
+    text-align: center; }
+    /* line 96, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .overlay .wrapper h1 {
+      font-size: 3em;
+      color: #FFF;
+      margin-top: 2em; }
+
+/* line 104, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background-color: #FFF;
+  border-bottom: 3px solid #bdc3c7;
+  padding: 1em 2em;
+  float: left;
+  width: 85%;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  transition: 0.3s all ease; }
+
+/* line 116, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+button {
+  -webkit-transition: 0.6s all ease;
+  -moz-transition: 0.6s all ease;
+  -o-transition: 0.6s all ease;
+  -ms-transition: 0.6s all ease;
+  transition: 0.6s all ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  cursor: pointer; }
+
+/* line 124, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+button.search-button {
+  width: 15%;
+  background-color: #2ecc71;
+  border-bottom: 3px solid #27ae60;
+  color: #FFF;
+  float: left;
+  padding: 1em; }
+
+/* line 133, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+.voice-search {
+  position: absolute;
+  bottom: 2em;
+  width: 72px;
+  height: 72px;
+  left: 50%;
+  margin-left: -36px; }
+
+/* line 142, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+.close {
+  position: absolute;
+  top: 1em;
+  right: 1em; }
+  /* line 146, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .close i {
+    color: #FFF;
+    font-size: 2em; }
+
+/* line 152, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+div.clicked {
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -o-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2); }
+  /* line 155, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  div.clicked button {
+    -webkit-animation: blink-effect 1s infinite;
+    -moz-animation: blink-effect 1s infinite;
+    -o-animation: blink-effect 1s infinite;
+    -ms-animation: blink-effect 1s infinite;
+    animation: blink-effect 1s infinite; }
+
+/* line 160, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+button.search-toggle {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  background-color: #bb0000;
+  padding: 2em 2.2em;
+  outline: none; }
+  /* line 165, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  button.search-toggle i {
+    color: #FFF;
+    font-size: 1.6em; }
+  /* line 169, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  button.search-toggle:hover {
+    background-color: #800000; }
+
+/* line 174, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+button i {
+  color: #FFF; }
+
+/* line 178, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+.results {
+  display: none;
+  position: relative;
+  padding-top: 6em;
+  padding-bottom: 2em;
+  background-color: #f1f1f1;
+  min-height: 100vh; }
+  /* line 185, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .results h1 {
+    color: #000;
+    font-weight: 300;
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: 2em; }
+  /* line 192, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .results .result {
+    width: 100%;
+    margin-bottom: 2em; }
+    /* line 194, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .results .result .infos {
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      background-color: #3498db;
+      overflow: hidden; }
+      /* line 198, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .results .result .infos div {
+        float: left;
+        min-height: 35px;
+        border-right: 1px solid #bdc3c7; }
+        /* line 202, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+        .results .result .infos div:last-child {
+          border-right: none; }
+      /* line 207, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .results .result .infos .numero, .results .result .infos .more {
+        color: #FFF;
+        font-weight: 600;
+        text-align: center; }
+      /* line 213, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .results .result .infos .nome, .results .result .infos .sentido {
+        background-color: #FFF; }
+      /* line 216, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .results .result .infos .more {
+        -webkit-transition: 0.5s all ease;
+        -moz-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        -ms-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        cursor: pointer; }
+        /* line 219, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+        .results .result .infos .more:hover {
+          background-color: #2980b9; }
+    /* line 224, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .results .result .more-infos {
+      display: none;
+      border-top: 1px solid #bdc3c7;
+      background-color: #FFF;
+      overflow: hidden; }
+      /* line 229, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .results .result .more-infos section.horarios {
+        overflow: hidden; }
+        /* line 231, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+        .results .result .more-infos section.horarios .horario {
+          float: left;
+          padding: 1em;
+          min-height: 100px;
+          border-right: 1px solid #bdc3c7; }
+          /* line 236, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+          .results .result .more-infos section.horarios .horario h2 {
+            font-weight: 400;
+            font-size: 1em;
+            text-transform: uppercase;
+            margin-bottom: 10px; }
+          /* line 242, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+          .results .result .more-infos section.horarios .horario:last-child {
+            border-right: none; }
+          /* line 245, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+          .results .result .more-infos section.horarios .horario table {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse; }
+            /* line 252, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+            .results .result .more-infos section.horarios .horario table td {
+              border: 1px solid #2980b9;
+              text-align: center;
+              vertical-align: middle;
+              color: #333;
+              padding: 8px 5px; }
+            /* line 259, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+            .results .result .more-infos section.horarios .horario table thead {
+              background-color: #2980b9; }
+            /* line 262, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+            .results .result .more-infos section.horarios .horario table tbody {
+              background-color: #FFF; }
+    /* line 269, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .results .result .itinerario {
+      border-top: 1px solid #bdc3c7;
+      width: 100%;
+      padding: 1em; }
+      /* line 273, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .results .result .itinerario h2 {
+        font-weight: 400;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        margin-bottom: 10px; }
+      /* line 279, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .results .result .itinerario p {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 1em;
+        line-height: 1.4em;
+        color: #333; }
+    /* line 287, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .results .result .ver-mapa {
+      -webkit-transition: 0.5s all ease;
+      -moz-transition: 0.5s all ease;
+      -o-transition: 0.5s all ease;
+      -ms-transition: 0.5s all ease;
+      transition: 0.5s all ease;
+      background-color: #3498db;
+      width: 100%;
+      padding: 1em;
+      color: #FFF;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer; }
+      /* line 296, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .results .result .ver-mapa:hover {
+        background-color: #2980b9; }
+
+/* line 304, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+.container {
+  max-width: 960px;
+  margin: 0 auto; }
+
+/* line 309, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+.fixed-controls {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 2; }
+
+/* line 316, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+button.show-controls {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3; }
+
+/* line 324, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+button.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  background-color: #3498db;
+  border-bottom: 2px solid #2980b9;
+  padding: 1em; }
+  /* line 333, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  button.back-to-top i {
+    font-size: 2em; }
+
+@media screen and (max-width: 768px) {
+  /* line 341, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .fixed-controls .controls input[type="text"] {
+    width: 70%; }
+
+  /* line 345, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .header-content {
+    text-align: center;
+    width: 100%;
+    padding-top: 2em; }
+    /* line 349, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .header-content h1.main-title {
+      font-size: 3em; }
+    /* line 352, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .header-content .controls {
+      max-width: 95%; }
+
+  /* line 356, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .horario {
+    width: 100%; }
+
+  /* line 359, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .container {
+    max-width: 95%; }
+
+  /* line 363, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .show-controls, .back-to-top {
+    width: 15%; }
+
+  /* line 368, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos div {
+    padding: 0.5em; }
+  /* line 369, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos .numero {
+    width: 30%; }
+  /* line 372, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos .nome {
+    width: 70%; }
+  /* line 375, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos .sentido {
+    width: 87%; }
+  /* line 378, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos .more {
+    width: 13%; }
+ }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* line 387, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .wrapper {
+    max-width: 80%;
+    margin: 0 auto; }
+    /* line 390, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .wrapper .header-content {
+      text-align: center;
+      width: 100%;
+      padding-top: 12em; }
+      /* line 394, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .wrapper .header-content h1.main-title {
+        font-size: 3em; }
+      /* line 397, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .wrapper .header-content .controls {
+        max-width: 95%; }
+
+  /* line 402, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .voice-search {
+    bottom: 6em; }
+
+  /* line 405, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .horario {
+    width: 50%; }
+
+  /* line 410, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos div {
+    padding: 1em; }
+  /* line 412, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos .numero, .result .infos .more {
+    width: 10%; }
+  /* line 416, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos .nome, .result .infos .sentido {
+    width: 40%; }
+
+  /* line 422, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  button.show-controls, button.back-to-top {
+    width: 5%; }
+
+  /* line 426, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .fixed-controls {
+    right: -6.5em; }
+ }
+
+@media screen and (min-width: 1024px) {
+  /* line 433, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .wrapper {
+    z-index: 2;
+    display: table;
+    width: 100%;
+    height: 100vh; }
+    /* line 438, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .wrapper:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle; }
+    /* line 444, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .wrapper .header-content {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      width: 100%; }
+      /* line 449, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .wrapper .header-content h1.main-title {
+        font-size: 4em; }
+      /* line 452, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .wrapper .header-content .controls {
+        max-width: 50%; }
+
+  /* line 457, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .horario {
+    width: 33%; }
+
+  /* line 463, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos div {
+    padding: 1em; }
+  /* line 465, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos .numero, .result .infos .more {
+    width: 10%; }
+  /* line 469, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .result .infos .nome, .result .infos .sentido {
+    width: 40%; }
+
+  /* line 476, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  button.show-controls, button.back-to-top {
+    width: 5%; }
+
+  /* line 480, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  .fixed-controls {
+    right: -6.5em; }
+    /* line 482, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+    .fixed-controls .controls {
+      width: 50%;
+      float: right; }
+      /* line 485, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+      .fixed-controls .controls input[type="text"] {
+        width: 45%; }
+ }
+
+@-webkit-keyframes blink-effect {
+  /* line 493, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  0% {
+    box-shadow: none; }
+
+  /* line 496, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  10% {
+    box-shadow: 0 0 2px #bb0000; }
+
+  /* line 499, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  20% {
+    box-shadow: 0 0 4px #bb0000; }
+
+  /* line 502, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  30% {
+    box-shadow: 0 0 6px #bb0000; }
+
+  /* line 505, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  40% {
+    box-shadow: 0 0 8px #bb0000; }
+
+  /* line 508, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  50% {
+    box-shadow: 0 0 10px #bb0000; }
+
+  /* line 511, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  60% {
+    box-shadow: 0 0 8px #bb0000; }
+
+  /* line 514, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  70% {
+    box-shadow: 0 0 6px #bb0000; }
+
+  /* line 517, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  80% {
+    box-shadow: 0 0 4px #bb0000; }
+
+  /* line 520, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  90% {
+    box-shadow: 0 0 2px #bb0000; }
+
+  /* line 523, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  100% {
+    box-shadow: none; } }
+
+@keyframes blink-effect {
+  /* line 529, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  0% {
+    box-shadow: none; }
+
+  /* line 532, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  10% {
+    box-shadow: 0 0 2px #bb0000; }
+
+  /* line 535, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  20% {
+    box-shadow: 0 0 4px #bb0000; }
+
+  /* line 538, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  30% {
+    box-shadow: 0 0 6px #bb0000; }
+
+  /* line 541, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  40% {
+    box-shadow: 0 0 8px #bb0000; }
+
+  /* line 544, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  50% {
+    box-shadow: 0 0 10px #bb0000; }
+
+  /* line 547, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  60% {
+    box-shadow: 0 0 8px #bb0000; }
+
+  /* line 550, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  70% {
+    box-shadow: 0 0 6px #bb0000; }
+
+  /* line 553, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  80% {
+    box-shadow: 0 0 4px #bb0000; }
+
+  /* line 556, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  90% {
+    box-shadow: 0 0 2px #bb0000; }
+
+  /* line 559, /home/lucas/Documents/Fatec/3º/IHC/Projeto/css/style.scss */
+  100% {
+    box-shadow: none; } }
+
+/*# sourceMappingURL=style.css.map */
