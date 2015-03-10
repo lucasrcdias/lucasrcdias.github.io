@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
-@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+//@import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
+//@import url(http://fonts.googleapis.com/css?family=Roboto:300);
 
 @mixin prefixo($p,$v) {
   -webkit-#{$p}: $v;
@@ -49,7 +49,7 @@ body {
   font-size: 14px;
 }
 
-header {
+header.main {
   z-index: 1;
   height: 100vh;
   background-image: url('../img/main-bg.jpg');
@@ -57,10 +57,18 @@ header {
   background-size: cover;
   .wrapper {
     z-index: 2;
+    .mask{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(0,0,0,0.6);
+    }
     .header-content {
       h1, h2 {
         color: $white;
-        text-shadow: 0 0 10px $black;
         display: block;
       }
       h1.main-title {
@@ -91,6 +99,7 @@ header {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
   .wrapper {
     text-align: center;
     h1 {
@@ -137,6 +146,7 @@ button.search-button {
   height: 72px;
   left: 50%;
   margin-left: -36px;
+  z-index: 2;
 }
 
 .close{
@@ -152,6 +162,7 @@ button.search-button {
 div.clicked {
   @include prefixo(transition, .5s all ease);
   @include prefixo(transform, scale(2));
+  z-index: 3;
   button{
     @include prefixo(animation, blink-effect 1s infinite);
   }
@@ -189,37 +200,44 @@ button i {
     text-align: left;
     margin-bottom: 2em;
   }
+  .legenda{
+    width: 100%;
+    background-color: $midnight-blue;
+    overflow: hidden;
+    div{  
+      float: left;
+      min-height: 35px;
+      border-right: 1px solid $midnight-blue;
+      padding: 1em;
+      color: $white;
+      &:last-child{
+        border-right: none;
+      }
+    }
+    .linha{width: 10%; text-align: center;}
+    .horarios{ @extend .linha; }
+    .trajetos{ @extend .linha; }
+    .nome{width: 35%;}
+    .sentido{ @extend .nome; }
+  }
   .result{
     width: 100%;
-    .infos{
+    margin-bottom: 2em;
+    .result-header{
       @include prefixo(box-shadow, 0 1px 2px rgba(0,0,0,.1));
-      background-color: $belize-hole;
+      background-color: $wet-asphalt;
+      border-bottom: 3px solid $midnight-blue;
       overflow: hidden;
-      div{
+      div{  
         float: left;
         min-height: 35px;
-        border-right: 1px solid $silver;
+        border-right: 1px solid $midnight-blue;
+        padding: 1em;
+        color: $white;
         &:last-child{
           border-right: none;
         }
-      }
-      .numero,
-      .more{
-        color: $white;
-        font-weight: 600;
-        text-align: center;
-      }
-      .nome,
-      .sentido{
-        background-color: $white;
-      }
-      .more{
-        @include prefixo(transition, .5s all ease);
-        cursor: pointer;
-        &:hover{
-          background-color: $peter-river;
-        }
-      }
+      } 
     }
     .more-infos{
       display: none;
@@ -250,14 +268,17 @@ button i {
             border-collapse: collapse;
             
             td{
-              border: 1px solid $peter-river;
+              border: 1px solid $midnight-blue;
               text-align: center;
               vertical-align: middle;
               color: $mid-black;
               padding: 8px 5px;
             }
             thead{
-              background-color: $peter-river;
+              background-color: $midnight-blue;
+              td{
+                color: $white;
+              }
             }
             tbody{
               background-color: $white;
@@ -286,7 +307,7 @@ button i {
     }
     .ver-mapa{
       @include prefixo(transition, .5s all ease);
-      background-color: $belize-hole;
+      background-color: $wet-asphalt;
       width: 100%;
       padding: 1em;
       color: $white;
@@ -294,10 +315,9 @@ button i {
       text-align: center;
       cursor: pointer;
       &:hover{
-        background-color: $peter-river;
+        background-color: $midnight-blue;
       }
     }
-    margin-bottom: 2em;
   }
 }
 
@@ -341,11 +361,13 @@ button.back-to-top{
       input[type="text"]{width: 70%;}
     }
   }
-  
+  .mask{display: none;}
   .header-content {
+    z-index: 2;
     text-align: center;
-    width: 100%;
-    padding-top: 2em;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 5em 0;
     h1.main-title {
       font-size: 3em;
     }
@@ -363,34 +385,41 @@ button.back-to-top{
   .back-to-top{
     width: 15%;
   }
+  .legenda{display: none;}
   .result{
-    .infos{
-      div{padding: .5em;}
-      .numero{
-        width: 30%;
+    .result-header{
+      .linha{width: 30%; text-align: center; background-color: $midnight-blue;}
+      .horarios{
+        width: 50%;
+        cursor: pointer;
+        text-align: center;
+        span{margin-left: 5px;}
       }
-      .nome{
-        width: 70%;
+      .trajetos{
+        width: 50%;
+        cursor: pointer;
+        text-align: center;
+        span{margin-left: 5px;}
       }
-      .sentido{
-        width: 87%;
-      }
-      .more{
-        width: 13%;
-      }
+      .nome{width: 70%; background-color: $midnight-blue;}
+      .sentido{ width: 100%; background-color: $midnight-blue;}
     }
   }
 }
-
 //tablet portrait
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrapper {
     max-width: 80%;
     margin: 0 auto;
     .header-content {
-      text-align: center;
-      width: 100%;
-      padding-top: 12em;
+      position: absolute;
+      width: 760px;
+      height: 176px;
+      top: 50%;
+      left: 50%;
+      margin-top: -88px;
+      margin-left: -380px;
+      z-index: 2;
       h1.main-title {
         font-size: 3em;
       }
@@ -405,19 +434,17 @@ button.back-to-top{
   .horario{
     width: 50%;
   }
+  
   .result{
-    .infos{
-      div{padding: 1em;}
-      .numero,
-      .more{
-        width: 10%;
-      }
-      .nome,
-      .sentido{
-        width: 40%;
-      }
+    .result-header{
+      .linha{width: 10%; text-align: center;}
+      .horarios{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
+      .trajetos{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
+      .nome{width: 35%;}
+      .sentido{width: 35%;}
     }
   }
+  
   button.show-controls,
   button.back-to-top{
     width: 5%;
@@ -427,9 +454,8 @@ button.back-to-top{
     right: -6.5em;
   }
 }
-
 //tablet landscape and higher
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .wrapper {
     z-index: 2;
     display: table;
@@ -442,10 +468,15 @@ button.back-to-top{
       vertical-align: middle;
     }
     .header-content {
-      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      height: 164px;
+      margin-top: -82px;
+      margin-left: -480px;
+      z-index: 2;
       text-align: center;
-      vertical-align: middle;
-      width: 100%;
       h1.main-title {
         font-size: 4em;
       }
@@ -459,16 +490,12 @@ button.back-to-top{
   }
   
   .result{
-    .infos{
-      div{padding: 1em;}
-      .numero,
-      .more{
-        width: 10%;
-      }
-      .nome,
-      .sentido{
-        width: 40%;
-      }
+    .result-header{
+      .linha{width: 10%; text-align: center;}
+      .horarios{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
+      .trajetos{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
+      .nome{width: 35%;}
+      .sentido{width: 35%;}
     }
   }
   

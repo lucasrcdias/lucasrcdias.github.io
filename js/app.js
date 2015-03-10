@@ -2,12 +2,20 @@ $(function(){
   //clique no botão de pesquisa por voz
   $(".search-toggle").click(function(){
     $(".overlay").fadeIn(function(){
-      $(".voice-search").animate({
-        "bottom":"50%",
-        "margin-bottom":"-36px"
-      }, function(){
-        $(this).addClass("clicked");
-      });
+      if(!mob)
+        $(".voice-search").animate({
+          "bottom":"50%",
+          "margin-bottom":"-36px"
+        }, function(){
+          $(this).addClass("clicked");
+        });
+      else
+        $(".voice-search").animate({
+          "bottom":"30%",
+          "margin-bottom":"-36px"
+        }, function(){
+          $(this).addClass("clicked");
+        });
     });
   });
   //clique do "x" no overlay
@@ -21,7 +29,28 @@ $(function(){
   });
   //variaveis
   var pesq = '', 
-      json = '';
+      json = '',
+      isMobile = {
+  Android: function () {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function () {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function () {
+    return navigator.userAgent.match(/iPhone|iPod/i);
+  },
+  Opera: function () {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function () {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  any: function () {
+    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+  }
+},
+      mob = isMobile.any();
   
   //clique do botão de pesquisa normal
   $(".search-button").click(function(){
@@ -37,7 +66,7 @@ $(function(){
   
   var element = $('.search-controls');
     
-  $(window).scroll(function () {
+  /*$(window).scroll(function () {
     if ($(this).scrollTop() > window.innerHeight - 1){
       element.addClass("fixed-controls");
       $(".show-controls, .back-to-top").fadeIn();
@@ -47,7 +76,7 @@ $(function(){
       $(".search-controls").fadeIn();
       $(".show-controls, .back-to-top").fadeOut();
     }
-  });
+  });*/
   
   $(".show-controls").click(function(){
     var x = $(".fixed-controls");
@@ -67,7 +96,7 @@ $(function(){
     }, 1000); 
   });
   
-  $(".more").click(function(){
+  $(".horarios").click(function(){
     toggleMore($(this).data("more"));
   });
     
