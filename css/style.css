@@ -160,17 +160,17 @@ button i {
     margin-bottom: 2em; }
   .results .legenda {
     width: 100%;
-    background-color: #2c3e50;
+    background-color: #95a5a6;
     overflow: hidden; }
     .results .legenda div {
       float: left;
       min-height: 35px;
-      border-right: 1px solid #2c3e50;
+      border-right: 1px solid #7f8c8d;
       padding: 1em;
       color: #FFF; }
       .results .legenda div:last-child {
         border-right: none; }
-    .results .legenda .linha, .results .legenda .horarios, .results .legenda .trajetos {
+    .results .legenda .linha, .results .legenda .horarios, .results .legenda .result .result-header .trajetos, .results .result .result-header .legenda .trajetos, .results .legenda .trajetos {
       width: 10%;
       text-align: center; }
     .results .legenda .nome, .results .legenda .sentido {
@@ -195,42 +195,50 @@ button i {
         color: #FFF; }
         .results .result .result-header div:last-child {
           border-right: none; }
+      .results .result .result-header .horarios, .results .result .result-header .trajetos {
+        -webkit-transition: 0.5s all ease;
+        -moz-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        -ms-transition: 0.5s all ease;
+        transition: 0.5s all ease; }
+        .results .result .result-header .horarios:hover, .results .result .result-header .trajetos:hover {
+          background-color: #2c3e50; }
     .results .result .more-infos {
       display: none;
       border-top: 1px solid #bdc3c7;
       background-color: #FFF;
       overflow: hidden; }
-      .results .result .more-infos section.horarios {
+      .results .result .more-infos section.horarios, .results .result .more-infos .result-header section.trajetos, .results .result .result-header .more-infos section.trajetos {
         overflow: hidden; }
-        .results .result .more-infos section.horarios .horario {
+        .results .result .more-infos section.horarios .horario, .results .result .more-infos .result-header section.trajetos .horario, .results .result .result-header .more-infos section.trajetos .horario {
           float: left;
           padding: 1em;
           min-height: 100px;
           border-right: 1px solid #bdc3c7; }
-          .results .result .more-infos section.horarios .horario h2 {
+          .results .result .more-infos section.horarios .horario h2, .results .result .more-infos .result-header section.trajetos .horario h2, .results .result .result-header .more-infos section.trajetos .horario h2 {
             font-weight: 400;
             font-size: 1em;
             text-transform: uppercase;
             margin-bottom: 10px; }
-          .results .result .more-infos section.horarios .horario:last-child {
+          .results .result .more-infos section.horarios .horario:last-child, .results .result .more-infos .result-header section.trajetos .horario:last-child, .results .result .result-header .more-infos section.trajetos .horario:last-child {
             border-right: none; }
-          .results .result .more-infos section.horarios .horario table {
+          .results .result .more-infos section.horarios .horario table, .results .result .more-infos .result-header section.trajetos .horario table, .results .result .result-header .more-infos section.trajetos .horario table {
             font-family: 'Roboto', sans-serif;
             font-weight: 300;
             width: 100%;
             border-spacing: 0;
             border-collapse: collapse; }
-            .results .result .more-infos section.horarios .horario table td {
+            .results .result .more-infos section.horarios .horario table td, .results .result .more-infos .result-header section.trajetos .horario table td, .results .result .result-header .more-infos section.trajetos .horario table td {
               border: 1px solid #2c3e50;
               text-align: center;
               vertical-align: middle;
               color: #333;
               padding: 8px 5px; }
-            .results .result .more-infos section.horarios .horario table thead {
+            .results .result .more-infos section.horarios .horario table thead, .results .result .more-infos .result-header section.trajetos .horario table thead, .results .result .result-header .more-infos section.trajetos .horario table thead {
               background-color: #2c3e50; }
-              .results .result .more-infos section.horarios .horario table thead td {
+              .results .result .more-infos section.horarios .horario table thead td, .results .result .more-infos .result-header section.trajetos .horario table thead td, .results .result .result-header .more-infos section.trajetos .horario table thead td {
                 color: #FFF; }
-            .results .result .more-infos section.horarios .horario table tbody {
+            .results .result .more-infos section.horarios .horario table tbody, .results .result .more-infos .result-header section.trajetos .horario table tbody, .results .result .result-header .more-infos section.trajetos .horario table tbody {
               background-color: #FFF; }
     .results .result .itinerario {
       border-top: 1px solid #bdc3c7;
@@ -247,21 +255,6 @@ button i {
         font-size: 1em;
         line-height: 1.4em;
         color: #333; }
-    .results .result .ver-mapa {
-      -webkit-transition: 0.5s all ease;
-      -moz-transition: 0.5s all ease;
-      -o-transition: 0.5s all ease;
-      -ms-transition: 0.5s all ease;
-      transition: 0.5s all ease;
-      background-color: #34495e;
-      width: 100%;
-      padding: 1em;
-      color: #FFF;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer; }
-      .results .result .ver-mapa:hover {
-        background-color: #2c3e50; }
 
 .container {
   max-width: 960px;
@@ -323,15 +316,15 @@ button.back-to-top {
   .legenda {
     display: none; }
 
-  .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
+  .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .results .result .result-header .legenda .trajetos, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
     width: 30%;
     text-align: center;
     background-color: #2c3e50; }
-  .result .result-header .horarios {
+  .result .result-header .horarios, .results .result .result-header .trajetos {
     width: 50%;
     cursor: pointer;
     text-align: center; }
-    .result .result-header .horarios span {
+    .result .result-header .horarios span, .results .result .result-header .trajetos span {
       margin-left: 5px; }
   .result .result-header .trajetos {
     width: 50%;
@@ -369,14 +362,14 @@ button.back-to-top {
   .horario {
     width: 50%; }
 
-  .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
+  .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .results .result .result-header .legenda .trajetos, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
     width: 10%;
     text-align: center; }
-  .result .result-header .horarios {
+  .result .result-header .horarios, .results .result .result-header .trajetos {
     width: 10%;
     text-align: center;
     cursor: pointer; }
-    .result .result-header .horarios span {
+    .result .result-header .horarios span, .results .result .result-header .trajetos span {
       display: none; }
   .result .result-header .trajetos {
     width: 10%;
@@ -424,14 +417,14 @@ button.back-to-top {
   .horario {
     width: 33%; }
 
-  .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
+  .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .results .result .result-header .legenda .trajetos, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
     width: 10%;
     text-align: center; }
-  .result .result-header .horarios {
+  .result .result-header .horarios, .results .result .result-header .trajetos {
     width: 10%;
     text-align: center;
     cursor: pointer; }
-    .result .result-header .horarios span {
+    .result .result-header .horarios span, .results .result .result-header .trajetos span {
       display: none; }
   .result .result-header .trajetos {
     width: 10%;
