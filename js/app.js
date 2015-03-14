@@ -100,6 +100,12 @@ $(function(){
     toggleMore($(this).data("more"));
   });
     
+  $(".result-header").click(function(){
+    if($(this).hasClass("visible-info"))
+      $(this).removeClass("visible-info");
+    else $(this).addClass("visible-info");
+  });
+  
   function toggleMore(id){
     var el = $("#"+ id);
     if(el.is(":visible"))

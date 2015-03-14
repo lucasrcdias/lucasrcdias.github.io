@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +64,7 @@ input[type="text"] {
   -moz-appearance: none;
   border: none;
   background-color: #FFF;
-  border-bottom: 3px solid #bdc3c7;
+  border-bottom: 2px solid #bdc3c7;
   padding: 1em 2em;
   float: left;
   width: 85%;
@@ -70,7 +72,24 @@ input[type="text"] {
   -moz-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   -ms-transition: 0.3s all ease;
-  transition: 0.3s all ease; }
+  transition: 0.3s all ease;
+  -webkit-border-top-left-radius: 30px;
+  -moz-border-top-left-radius: 30px;
+  -o-border-top-left-radius: 30px;
+  -ms-border-top-left-radius: 30px;
+  border-top-left-radius: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+  -moz-border-bottom-left-radius: 30px;
+  -o-border-bottom-left-radius: 30px;
+  -ms-border-bottom-left-radius: 30px;
+  border-bottom-left-radius: 30px; }
+  input[type="text"]:focus {
+    outline: none;
+    -webkit-box-shadow: inset 1px 2px 40px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 1px 2px 40px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: inset 1px 2px 40px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: inset 1px 2px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 2px 40px rgba(0, 0, 0, 0.2); }
 
 button {
   -webkit-transition: 0.6s all ease;
@@ -82,14 +101,26 @@ button {
   -moz-appearance: none;
   border: none;
   cursor: pointer; }
+  button:focus {
+    outline: none; }
 
 button.search-button {
   width: 15%;
   background-color: #2ecc71;
-  border-bottom: 3px solid #27ae60;
+  border-bottom: 2px solid #27ae60;
   color: #FFF;
   float: left;
-  padding: 1em; }
+  padding: 1em;
+  -webkit-border-top-right-radius: 30px;
+  -moz-border-top-right-radius: 30px;
+  -o-border-top-right-radius: 30px;
+  -ms-border-top-right-radius: 30px;
+  border-top-right-radius: 30px;
+  -webkit-border-bottom-right-radius: 30px;
+  -moz-border-bottom-right-radius: 30px;
+  -o-border-bottom-right-radius: 30px;
+  -ms-border-bottom-right-radius: 30px;
+  border-bottom-right-radius: 30px; }
 
 .voice-search {
   position: absolute;
@@ -159,9 +190,16 @@ button i {
     text-align: left;
     margin-bottom: 2em; }
   .results .legenda {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
     width: 100%;
     background-color: #95a5a6;
-    overflow: hidden; }
+    overflow: hidden;
+    border-bottom: 2px solid #7f8c8d;
+    margin-bottom: 2em; }
     .results .legenda div {
       float: left;
       min-height: 35px;
@@ -184,8 +222,13 @@ button i {
       -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -o-border-radius: 4px;
+      -ms-border-radius: 4px;
+      border-radius: 4px;
       background-color: #34495e;
-      border-bottom: 3px solid #2c3e50;
+      border-bottom: 2px solid #2c3e50;
       overflow: hidden; }
       .results .result .result-header div {
         float: left;
@@ -203,11 +246,36 @@ button i {
         transition: 0.5s all ease; }
         .results .result .result-header .horarios:hover, .results .result .result-header .trajetos:hover {
           background-color: #2c3e50; }
+    .results .result .visible-info {
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -o-border-radius: 0;
+      -ms-border-radius: 0;
+      border-radius: 0;
+      -webkit-border-top-left-radius: 4px;
+      -moz-border-top-left-radius: 4px;
+      -o-border-top-left-radius: 4px;
+      -ms-border-top-left-radius: 4px;
+      border-top-left-radius: 4px;
+      -webkit-border-top-right-radius: 4px;
+      -moz-border-top-right-radius: 4px;
+      -o-border-top-right-radius: 4px;
+      -ms-border-top-right-radius: 4px;
+      border-top-right-radius: 4px; }
     .results .result .more-infos {
       display: none;
-      border-top: 1px solid #bdc3c7;
       background-color: #FFF;
-      overflow: hidden; }
+      overflow: hidden;
+      -webkit-border-bottom-left-radius: 4px;
+      -moz-border-bottom-left-radius: 4px;
+      -o-border-bottom-left-radius: 4px;
+      -ms-border-bottom-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      -webkit-border-bottom-right-radius: 4px;
+      -moz-border-bottom-right-radius: 4px;
+      -o-border-bottom-right-radius: 4px;
+      -ms-border-bottom-right-radius: 4px;
+      border-bottom-right-radius: 4px; }
       .results .result .more-infos section.horarios, .results .result .more-infos .result-header section.trajetos, .results .result .result-header .more-infos section.trajetos {
         overflow: hidden; }
         .results .result .more-infos section.horarios .horario, .results .result .more-infos .result-header section.trajetos .horario, .results .result .result-header .more-infos section.trajetos .horario {
@@ -240,21 +308,6 @@ button i {
                 color: #FFF; }
             .results .result .more-infos section.horarios .horario table tbody, .results .result .more-infos .result-header section.trajetos .horario table tbody, .results .result .result-header .more-infos section.trajetos .horario table tbody {
               background-color: #FFF; }
-    .results .result .itinerario {
-      border-top: 1px solid #bdc3c7;
-      width: 100%;
-      padding: 1em; }
-      .results .result .itinerario h2 {
-        font-weight: 400;
-        font-size: 1.2em;
-        text-transform: uppercase;
-        margin-bottom: 10px; }
-      .results .result .itinerario p {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        font-size: 1em;
-        line-height: 1.4em;
-        color: #333; }
 
 .container {
   max-width: 960px;
@@ -494,5 +547,15 @@ button.back-to-top {
     box-shadow: 0 0 2px #bb0000; }
   100% {
     box-shadow: none; } }
+::-webkit-scrollbar {
+  width: 4px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2ecc71; }
 
 /*# sourceMappingURL=style.css.map */

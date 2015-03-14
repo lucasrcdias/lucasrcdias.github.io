@@ -1,5 +1,5 @@
-//@import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
-//@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
 
 @mixin prefixo($p,$v) {
   -webkit-#{$p}: $v;
@@ -116,11 +116,17 @@ input[type="text"] {
   -moz-appearance: none;
   border: none;
   background-color: $input-bg-color;
-  border-bottom: 3px solid $input-border-color;
+  border-bottom: 2px solid $input-border-color;
   padding: 1em 2em;
   float: left;
   width: 85%;
   @include prefixo(transition, .3s all ease);
+  @include prefixo(border-top-left-radius, 30px);
+  @include prefixo(border-bottom-left-radius, 30px);
+  &:focus{
+    outline: none;
+    @include prefixo(box-shadow, inset 1px 2px 40px rgba(0, 0, 0, 0.2));
+  }
 }
 
 button {
@@ -129,15 +135,20 @@ button {
   -moz-appearance: none;
   border: none;
   cursor: pointer;
+  &:focus{
+    outline: none;
+  }
 }
 
 button.search-button {
   width: 15%;
   background-color: $search-button-bg-color;
-  border-bottom: 3px solid $search-button-border-color;
+  border-bottom: 2px solid $search-button-border-color;
   color: $white;
   float: left;
   padding: 1em;
+  @include prefixo(border-top-right-radius, 30px);
+  @include prefixo(border-bottom-right-radius, 30px);
 }
 
 .voice-search {
@@ -202,9 +213,12 @@ button i {
     margin-bottom: 2em;
   }
   .legenda{
+    @include prefixo(border-radius, 4px);
     width: 100%;
     background-color: $concrete;
     overflow: hidden;
+    border-bottom: 2px solid $asbestos;
+    margin-bottom: 2em;
     div{  
       float: left;
       min-height: 35px;
@@ -226,8 +240,9 @@ button i {
     margin-bottom: 2em;
     .result-header{
       @include prefixo(box-shadow, 0 1px 2px rgba(0,0,0,.1));
+      @include prefixo(border-radius, 4px);
       background-color: $wet-asphalt;
-      border-bottom: 3px solid $midnight-blue;
+      border-bottom: 2px solid $midnight-blue;
       overflow: hidden;
       div{  
         float: left;
@@ -238,8 +253,7 @@ button i {
         &:last-child{
           border-right: none;
         }
-      }
-      
+      }      
       .horarios{
         @include prefixo(transition, .5s all ease);
         &:hover{
@@ -250,11 +264,17 @@ button i {
         @extend .horarios;
       }
     }
+    .visible-info{
+      @include prefixo(border-radius, 0);
+      @include prefixo(border-top-left-radius, 4px);
+      @include prefixo(border-top-right-radius, 4px);
+    }
     .more-infos{
       display: none;
-      border-top: 1px solid $silver;
       background-color: $white;
       overflow: hidden;
+      @include prefixo(border-bottom-left-radius, 4px);
+      @include prefixo(border-bottom-right-radius, 4px);
       section.horarios{
         overflow: hidden;
         .horario{
@@ -296,24 +316,6 @@ button i {
             }
           }
         }
-      }
-    }
-    .itinerario{
-      border-top: 1px solid $silver;
-      width: 100%;
-      padding: 1em;
-      h2{
-        font-weight: 400;
-        font-size: 1.2em;
-        text-transform: uppercase;
-        margin-bottom: 10px;
-      }
-      p{ 
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        font-size: 1em;
-        line-height: 1.4em;
-        color: $mid-black;
       }
     }
   }
@@ -584,4 +586,19 @@ button.back-to-top{
   100% {
     box-shadow: none;
   }
+}
+
+
+::-webkit-scrollbar {
+     width: 4px;
+}
+
+    /* Track */
+::-webkit-scrollbar-track {
+  background: $black;
+}
+
+    /* Handle */
+::-webkit-scrollbar-thumb {
+  background: $emerald;
 }
