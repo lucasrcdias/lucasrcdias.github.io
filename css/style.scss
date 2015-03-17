@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
-@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+@import url(http://fonts.googleapis.com/css?family=Dosis:300,400,600);
 
 @mixin prefixo($p,$v) {
   -webkit-#{$p}: $v;
@@ -45,11 +45,14 @@ $search-toggle-bg-color-hover: $youtube-darken-red;
 
 body {
   background-color: $midnight-blue;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Dosis', sans-serif;
   font-weight: 300;
   font-size: 14px;
 }
-
+a{
+  color: $white;
+  text-decoration: none;
+}
 header.main {
   z-index: 1;
   height: 100vh;
@@ -71,6 +74,7 @@ header.main {
       h1, h2 {
         color: $white;
         display: block;
+        font-family: 'Raleway', sans-serif;
       }
       h1.main-title {
         font-weight: 900;
@@ -105,6 +109,7 @@ header.main {
     text-align: center;
     h1 {
       font-size: 3em;
+      font-family: 'Raleway', sans-serif;
       color: $white;
       margin-top: 2em;
     }
@@ -292,7 +297,7 @@ button i {
             border-right: none;
           }
           table{
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Dosis', sans-serif;
             font-weight: 300;
             width: 100%;
             border-spacing: 0;
@@ -420,6 +425,7 @@ button.back-to-top{
       margin-top: -88px;
       margin-left: -380px;
       z-index: 2;
+      text-align: center;
       h1.main-title {
         font-size: 3em;
       }
@@ -601,4 +607,8 @@ button.back-to-top{
     /* Handle */
 ::-webkit-scrollbar-thumb {
   background: $emerald;
+}
+
+.map-overlay{
+
 }

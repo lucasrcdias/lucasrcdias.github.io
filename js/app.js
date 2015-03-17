@@ -1,7 +1,7 @@
 $(function(){
   //clique no botão de pesquisa por voz
   $(".search-toggle").click(function(){
-    $(".overlay").fadeIn(function(){
+    $(".voice-overlay").fadeIn(function(){
       if(!mob)
         $(".voice-search").animate({
           "bottom":"50%",
@@ -18,14 +18,18 @@ $(function(){
         });
     });
   });
-  //clique do "x" no overlay
-  $(".close").click(function(){
+  //clique do "x" no overlay da voz
+  $(".voice-close").click(function(){
     $(".voice-search").removeClass("clicked").animate({
         "bottom":"2em",
         "margin-bottom":"0"
       }, function(){
-        $(".overlay").fadeOut();
+        $(".voice-overlay").fadeOut();
       });
+  });
+  
+  $(".map-close").click(function(){
+    $(".map-overlay").fadeOut();
   });
   //variaveis
   var pesq = '', 
@@ -56,11 +60,54 @@ $(function(){
   $(".search-button").click(function(){
     pesq = $("#pesq").val();
     if (pesq != "") {
-      $(".results").fadeIn(function(){
-        $('html,body').animate({
-          scrollTop: $(this).offset().top
-        }, 1000);  
-      });
+      
+      var contResult = 0
+        ,linhas = $.getJSON("linhas.json", function(data){
+        $.each(data.linhas, function(i, item){
+          if(this.nome.indexOf(pesq) > -1 || this.id.indexOf(pesq) > -1 || this.itinerario.indexOf(pesq) > -1){
+            contResult++;
+            result.append("<div class=\"result\">"+
+                            "<header class=\"result-header\">"+
+                            "  <div class=\"linha\">"+ this.numero +"</div>"+
+                            "  <div class=\"nome\">"+ this.nome.replace('/','-') +"</div>"+
+                            "  <div class=\"sentido\">"+ this.sentido.replace('/','-') +"</div>"+
+                            "  <div class=\"horarios\"><i class=\"fa fa-clock-o\"></i><span>Horários</span>"+
+                            "  </div>"+
+                            "  <div class=\"trajetos\"><a href=\""+ this.gmaps +"\" target=\"_blank\"><i class=\"fa fa-map-marker\"></i> <span>Trajetória</span></a>"+
+                            "  </div>"+
+                            "</header>"+
+                          "</div>");
+          };
+        });
+        if(contResult == 0)
+          alert("Não encontramos nada com " + pesq);
+        else{          
+          $(".horarios").click(function(){
+            toggleMore($(this).data("more"));
+          });
+          /*
+          $(".trajetos").click(function(){
+            var map = $(this).data("map"),
+                wrapper = $(".map-wrapper");
+
+            wrapper.append("<iframe width='100%' height='500' framborder='0' scrolling='no' marginheight='0' marginwidth='0' src='"+ map +"'></iframe>");
+
+            $(".map-overlay").fadeIn();
+          });*/
+
+          
+          $("#pesq-query").html(pesq);
+          $(".results").fadeIn(function(){
+            $('html,body').animate({
+              scrollTop: $(this).offset().top
+            }, 1000);  
+          });
+        }
+      })
+      , result = $(".results .container");
+    }
+    else{
+      alert("Ô SEU CUZAO, DIGITA UMA COISA AE CARAIO!");
     }
   });
   
@@ -96,10 +143,6 @@ $(function(){
     }, 1000); 
   });
   
-  $(".horarios").click(function(){
-    toggleMore($(this).data("more"));
-  });
-    
   $(".result-header").click(function(){
     if($(this).hasClass("visible-info"))
       $(this).removeClass("visible-info");
@@ -115,5 +158,9 @@ $(function(){
     $('html,body').animate({
           scrollTop: el.offset().top
         }, 1000);
+  }
+  
+  function toggleMap(map){
+    
   }
 }(jQuery));
