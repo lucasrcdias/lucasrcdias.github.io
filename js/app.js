@@ -85,16 +85,6 @@ $(function(){
           $(".horarios").click(function(){
             toggleMore($(this).data("more"));
           });
-          /*
-          $(".trajetos").click(function(){
-            var map = $(this).data("map"),
-                wrapper = $(".map-wrapper");
-
-            wrapper.append("<iframe width='100%' height='500' framborder='0' scrolling='no' marginheight='0' marginwidth='0' src='"+ map +"'></iframe>");
-
-            $(".map-overlay").fadeIn();
-          });*/
-
           
           $("#pesq-query").html(pesq);
           $(".results").fadeIn(function(){
