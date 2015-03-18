@@ -9,3 +9,5 @@ Via javascript, percorremos o arquivo .json e mostramos somente as informações
 
 O código fonte está livre para estudos e para futuros estudantes da Fatec SJC que possam usar como base de algum outro
 projeto. 
+
+Link para a aplicação: <a href="http://lucasrcdias.github.io">IHC - Fatec SJC 2015</a>
