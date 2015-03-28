@@ -330,6 +330,27 @@ button.back-to-top {
   button.back-to-top i {
     font-size: 2em; }
 
+.footer {
+  padding: 2em 0;
+  overflow: hidden;
+  background-color: #000; }
+  .footer .half {
+    width: 50%;
+    padding: 1em;
+    float: left;
+    color: #FFF; }
+    .footer .half a {
+      font-style: italic;
+      color: #1b5480; }
+      .footer .half a:hover {
+        color: #287bbc; }
+    .footer .half .author {
+      margin-bottom: 1em; }
+      .footer .half .author a {
+        padding: 0 1em; }
+  .footer .authors {
+    text-align: right; }
+
 @media screen and (max-width: 768px) {
   .fixed-controls .controls input[type="text"] {
     width: 70%; }
@@ -434,7 +455,7 @@ button.back-to-top {
 
   .fixed-controls {
     right: -6.5em; } }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .wrapper {
     z-index: 2;
     display: table;

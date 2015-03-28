@@ -26,6 +26,8 @@ $silver: #bdc3c7;
 $grey: #f1f1f1;
 $black: #000;
 $mid-black: #333;
+$linkedin-blue: #1b5480;
+$linkedin-blue-secondary: #287bbc;
 $header-content-bg-color: $peter-river;
 $nav-bg-color: $belize-hole;
 $input-bg-color: $white;
@@ -37,6 +39,7 @@ $search-button-bg-color-hover: $turquoise;
 $search-button-border-color-hover: $green-sea;
 $search-toggle-bg-color: $youtube-red;
 $search-toggle-bg-color-hover: $youtube-darken-red;
+
 * {
   margin: 0;
   padding: 0;
@@ -49,10 +52,12 @@ body {
   font-weight: 300;
   font-size: 14px;
 }
+
 a{
   color: $white;
   text-decoration: none;
 }
+
 header.main {
   z-index: 1;
   height: 100vh;
@@ -357,6 +362,34 @@ button.back-to-top{
     font-size: 2em;
   }
 }
+
+.footer{
+  padding: 2em 0;
+  overflow: hidden;
+  background-color: $black;
+  .half{
+    width: 50%;
+    padding: 1em;
+    float: left;
+    color: $white;
+    a{
+      font-style: italic;
+      color: $linkedin-blue;
+      &:hover{
+        color: $linkedin-blue-secondary;
+      }
+    }
+    .author{
+      margin-bottom: 1em;
+      a{
+        padding: 0 1em;
+      }
+    }    
+  }
+  .authors{
+    text-align: right;
+  }
+}
 //smartphones
 @media screen and (max-width: 768px) {
   .fixed-controls{
@@ -459,7 +492,7 @@ button.back-to-top{
   }
 }
 //tablet landscape and higher
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .wrapper {
     z-index: 2;
     display: table;
