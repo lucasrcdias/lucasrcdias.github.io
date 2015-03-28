@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
-@import url(http://fonts.googleapis.com/css?family=Dosis:300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 
 body {
   background-color: #2c3e50;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 14px; }
 
@@ -233,14 +233,15 @@ button i {
       -o-border-radius: 4px;
       -ms-border-radius: 4px;
       border-radius: 4px;
-      background-color: #34495e;
       border-bottom: 2px solid #2c3e50;
       overflow: hidden; }
       .results .result .result-header div {
         float: left;
         min-height: 35px;
         border-right: 1px solid #2c3e50;
-        padding: 1em;
+        padding: 1em .5em;
+        font-weight: 700;
+        font-size: 12px;
         color: #FFF; }
         .results .result .result-header div:last-child {
           border-right: none; }
@@ -273,17 +274,16 @@ button i {
         .results .result .more-infos section.horarios .horario, .results .result .more-infos .result-header section.trajetos .horario, .results .result .result-header .more-infos section.trajetos .horario {
           float: left;
           padding: 1em;
-          min-height: 100px;
-          border-right: 1px solid #bdc3c7; }
+          min-height: 100px; }
           .results .result .more-infos section.horarios .horario h2, .results .result .more-infos .result-header section.trajetos .horario h2, .results .result .result-header .more-infos section.trajetos .horario h2 {
-            font-weight: 400;
+            font-weight: 700;
             font-size: 1em;
             text-transform: uppercase;
             margin-bottom: 10px; }
           .results .result .more-infos section.horarios .horario:last-child, .results .result .more-infos .result-header section.trajetos .horario:last-child, .results .result .result-header .more-infos section.trajetos .horario:last-child {
             border-right: none; }
           .results .result .more-infos section.horarios .horario table, .results .result .more-infos .result-header section.trajetos .horario table, .results .result .result-header .more-infos section.trajetos .horario table {
-            font-family: 'Dosis', sans-serif;
+            font-family: 'Lato', sans-serif;
             font-weight: 300;
             width: 100%;
             border-spacing: 0;
@@ -331,13 +331,12 @@ button.back-to-top {
     font-size: 2em; }
 
 .footer {
+  display: none;
   padding: 2em 0;
   overflow: hidden;
   background-color: #000; }
   .footer .half {
-    width: 50%;
     padding: 1em;
-    float: left;
     color: #FFF; }
     .footer .half a {
       font-style: italic;
@@ -382,29 +381,34 @@ button.back-to-top {
   .legenda {
     display: none; }
 
-  .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .results .result .result-header .legenda .trajetos, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
-    width: 30%;
-    text-align: center;
+  .result .result-header {
     background-color: #2c3e50; }
-  .result .result-header .horarios, .results .result .result-header .trajetos {
-    width: 50%;
-    cursor: pointer;
-    text-align: center; }
-    .result .result-header .horarios span, .results .result .result-header .trajetos span {
-      margin-left: 5px; }
-  .result .result-header .trajetos {
-    width: 50%;
-    cursor: pointer;
-    text-align: center; }
-    .result .result-header .trajetos span {
-      margin-left: 5px; }
-  .result .result-header .nome, .result .result-header .results .legenda .sentido, .results .legenda .result .result-header .sentido {
-    width: 70%;
-    background-color: #2c3e50; }
-  .result .result-header .sentido {
-    width: 100%;
-    background-color: #2c3e50; } }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .results .result .result-header .legenda .trajetos, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
+      width: 30%;
+      text-align: center;
+      background-color: #2c3e50; }
+    .result .result-header .horarios, .results .result .result-header .trajetos {
+      background-color: #34495e;
+      width: 50%;
+      cursor: pointer;
+      text-align: center; }
+      .result .result-header .horarios span, .results .result .result-header .trajetos span {
+        margin-left: 5px; }
+    .result .result-header .trajetos {
+      background-color: #34495e;
+      width: 50%;
+      cursor: pointer;
+      text-align: center; }
+      .result .result-header .trajetos span {
+        margin-left: 5px; }
+    .result .result-header .nome, .result .result-header .results .legenda .sentido, .results .legenda .result .result-header .sentido {
+      width: 70%;
+      background-color: #2c3e50; }
+    .result .result-header .sentido {
+      width: 100%;
+      background-color: #2c3e50;
+      text-align: center; } }
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .wrapper {
     max-width: 80%;
     margin: 0 auto; }
@@ -429,32 +433,38 @@ button.back-to-top {
   .horario {
     width: 50%; }
 
-  .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .results .result .result-header .legenda .trajetos, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
-    width: 10%;
-    text-align: center; }
-  .result .result-header .horarios, .results .result .result-header .trajetos {
-    width: 10%;
-    text-align: center;
-    cursor: pointer; }
-    .result .result-header .horarios span, .results .result .result-header .trajetos span {
-      display: none; }
-  .result .result-header .trajetos {
-    width: 10%;
-    text-align: center;
-    cursor: pointer; }
-    .result .result-header .trajetos span {
-      display: none; }
-  .result .result-header .nome, .result .result-header .results .legenda .sentido, .results .legenda .result .result-header .sentido {
-    width: 35%; }
-  .result .result-header .sentido {
-    width: 35%; }
+  .result .result-header {
+    background-color: #2c3e50; }
+    .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .results .result .result-header .legenda .trajetos, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
+      width: 10%;
+      text-align: center; }
+    .result .result-header .horarios, .results .result .result-header .trajetos {
+      width: 10%;
+      text-align: center;
+      cursor: pointer; }
+      .result .result-header .horarios span, .results .result .result-header .trajetos span {
+        display: none; }
+    .result .result-header .trajetos {
+      width: 10%;
+      text-align: center;
+      cursor: pointer; }
+      .result .result-header .trajetos span {
+        display: none; }
+    .result .result-header .nome, .result .result-header .results .legenda .sentido, .results .legenda .result .result-header .sentido {
+      width: 35%; }
+    .result .result-header .sentido {
+      width: 35%; }
 
   button.show-controls,
   button.back-to-top {
     width: 5%; }
 
   .fixed-controls {
-    right: -6.5em; } }
+    right: -6.5em; }
+
+  .footer .half {
+    width: 50%;
+    float: left; } }
 @media screen and (min-width: 1024px) {
   .wrapper {
     z-index: 2;
@@ -484,25 +494,27 @@ button.back-to-top {
   .horario {
     width: 33%; }
 
-  .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .results .result .result-header .legenda .trajetos, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
-    width: 10%;
-    text-align: center; }
-  .result .result-header .horarios, .results .result .result-header .trajetos {
-    width: 10%;
-    text-align: center;
-    cursor: pointer; }
-    .result .result-header .horarios span, .results .result .result-header .trajetos span {
-      display: none; }
-  .result .result-header .trajetos {
-    width: 10%;
-    text-align: center;
-    cursor: pointer; }
-    .result .result-header .trajetos span {
-      display: none; }
-  .result .result-header .nome, .result .result-header .results .legenda .sentido, .results .legenda .result .result-header .sentido {
-    width: 35%; }
-  .result .result-header .sentido {
-    width: 35%; }
+  .result .result-header {
+    background-color: #34495e; }
+    .result .result-header .linha, .result .result-header .results .legenda .horarios, .results .legenda .result .result-header .horarios, .results .result .result-header .legenda .trajetos, .result .result-header .results .legenda .trajetos, .results .legenda .result .result-header .trajetos {
+      width: 10%;
+      text-align: center; }
+    .result .result-header .horarios, .results .result .result-header .trajetos {
+      width: 10%;
+      text-align: center;
+      cursor: pointer; }
+      .result .result-header .horarios span, .results .result .result-header .trajetos span {
+        display: none; }
+    .result .result-header .trajetos {
+      width: 10%;
+      text-align: center;
+      cursor: pointer; }
+      .result .result-header .trajetos span {
+        display: none; }
+    .result .result-header .nome, .result .result-header .results .legenda .sentido, .results .legenda .result .result-header .sentido {
+      width: 35%; }
+    .result .result-header .sentido {
+      width: 35%; }
 
   button.show-controls,
   button.back-to-top {
@@ -514,7 +526,11 @@ button.back-to-top {
       width: 50%;
       float: right; }
       .fixed-controls .controls input[type="text"] {
-        width: 45%; } }
+        width: 45%; }
+
+  .footer .half {
+    width: 50%;
+    float: left; } }
 @-webkit-keyframes blink-effect {
   0% {
     box-shadow: none; }

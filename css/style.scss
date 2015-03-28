@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:500,600,900,300);
-@import url(http://fonts.googleapis.com/css?family=Dosis:300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
 
 @mixin prefixo($p,$v) {
   -webkit-#{$p}: $v;
@@ -48,7 +48,7 @@ $search-toggle-bg-color-hover: $youtube-darken-red;
 
 body {
   background-color: $midnight-blue;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 14px;
 }
@@ -251,14 +251,15 @@ button i {
     .result-header{
       @include prefixo(box-shadow, 0 1px 2px rgba(0,0,0,.1));
       @include prefixo(border-radius, 4px);
-      background-color: $wet-asphalt;
       border-bottom: 2px solid $midnight-blue;
       overflow: hidden;
       div{  
         float: left;
         min-height: 35px;
         border-right: 1px solid $midnight-blue;
-        padding: 1em;
+        padding: 1em .5em;
+        font-weight: 700;
+        font-size: 12px;
         color: $white;
         &:last-child{
           border-right: none;
@@ -289,9 +290,8 @@ button i {
           float: left;
           padding: 1em; 
           min-height: 100px;
-          border-right: 1px solid $silver;
           h2{
-            font-weight: 400;
+            font-weight: 700;
             font-size: 1em;
             text-transform: uppercase;
             margin-bottom: 10px;
@@ -300,7 +300,7 @@ button i {
             border-right: none;
           }
           table{
-            font-family: 'Dosis', sans-serif;
+            font-family: 'Lato', sans-serif;
             font-weight: 300;
             width: 100%;
             border-spacing: 0;
@@ -364,13 +364,12 @@ button.back-to-top{
 }
 
 .footer{
+  display: none;
   padding: 2em 0;
   overflow: hidden;
   background-color: $black;
   .half{
-    width: 50%;
     padding: 1em;
-    float: left;
     color: $white;
     a{
       font-style: italic;
@@ -423,27 +422,30 @@ button.back-to-top{
   }
   .legenda{display: none;}
   .result{
-    .result-header{
+    .result-header{      
+      background-color: $midnight-blue;
       .linha{width: 30%; text-align: center; background-color: $midnight-blue;}
       .horarios{
+        background-color: $wet-asphalt;
         width: 50%;
         cursor: pointer;
         text-align: center;
         span{margin-left: 5px;}
       }
       .trajetos{
+        background-color: $wet-asphalt;
         width: 50%;
         cursor: pointer;
         text-align: center;
         span{margin-left: 5px;}
       }
       .nome{width: 70%; background-color: $midnight-blue;}
-      .sentido{ width: 100%; background-color: $midnight-blue;}
+      .sentido{ width: 100%; background-color: $midnight-blue; text-align: center;}
     }
   }
 }
 //tablet portrait
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .wrapper {
     max-width: 80%;
     margin: 0 auto;
@@ -474,6 +476,7 @@ button.back-to-top{
   
   .result{
     .result-header{
+      background-color: $midnight-blue;
       .linha{width: 10%; text-align: center;}
       .horarios{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
       .trajetos{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
@@ -489,6 +492,13 @@ button.back-to-top{
   
   .fixed-controls{
     right: -6.5em;
+  }
+  
+  .footer{
+    .half{
+      width: 50%;
+      float: left;
+    }
   }
 }
 //tablet landscape and higher
@@ -528,6 +538,7 @@ button.back-to-top{
   
   .result{
     .result-header{
+      background-color: $wet-asphalt;
       .linha{width: 10%; text-align: center;}
       .horarios{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
       .trajetos{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
@@ -551,6 +562,12 @@ button.back-to-top{
     }
   }
 }
+  .footer{
+    .half{
+      width: 50%;
+      float: left;
+    }
+  }
 }
 //animation
 @-webkit-keyframes blink-effect {

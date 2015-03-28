@@ -58,6 +58,7 @@ $(function () {
 
   //clique do botão de pesquisa normal
   $(".search-button").click(function () {
+    $(".result").remove();
     pesq = $("#pesq").val();
     var contResult = 0,
       linhas = $.getJSON("linhas.json", function (data) {
@@ -96,6 +97,7 @@ $(function () {
               scrollTop: $(this).offset().top
             }, 1000);
           });
+          $("footer").fadeIn();
         }
       }),
       result = $(".results .container");
@@ -112,14 +114,32 @@ $(function () {
           htmlResult = "<div class=\"horario\">"+
                          "<h2>"+listaHorario[0]+"</h2>"+
                          "<table>"+
-                         "</table>"+
-                       "</div>";
-      
-      //o for vai começar do 1 pois o primeiro sempre vai ser o "título" da tabela, por exemplo, "de segunda a sexta-feira"
-      for(var y = 1; y < tamListaHorario; y++){
-          
+                         "  <thead>"+
+                         "    <tr><td>"+listaHorario[1]+"</td><td>"+listaHorario[2]+"</td><td>"+listaHorario[3]+"</td><td>"+listaHorario[4]+"</td></tr>"+
+                         "</thead>"+
+                         "<tbody>";
+      //o for vai começar do 5, lembrando que por ser uma lista o primeiro índice é 0, então vamos começar do 6 item ou seja, 5º indice pois os 5 primeiros item (0, 4) são padrões.
+      //vou decrementar 4 pois quero que ele vá até o último item - 4 para que eu possa avançar manualmente dentro do for.
+      tamListaHorario -= 4;
+      for(var y = 5; y < tamListaHorario; y += 4){
+        htmlResult += "<tr>";
+          if(parseInt(listaHorario[y].split(":")[0]) <= 6)
+            htmlResult += "<td>"+listaHorario[y]+"</td>";
+          else htmlResult += "<td></td>";
+          if(parseInt(listaHorario[y + 1].split(":")[0]) <= 12)
+            htmlResult += "<td>"+listaHorario[y + 1]+"</td>";
+          else htmlResult += "<td></td>";
+          if(parseInt(listaHorario[y + 2].split(":")[0]) <= 18)
+            htmlResult += "<td>"+listaHorario[y + 2]+"</td>";
+          else htmlResult += "<td></td>";
+          if(parseInt(listaHorario[y + 3].split(":")[0]) <= 24)
+            htmlResult += "<td>"+listaHorario[y + 3]+"</td>";
+          else htmlResult += "<td></td>";
+        htmlResult += "</tr>";
       }
-      
+      htmlResult += "   </tbody>"+
+                    " </table>"+
+                    "</div>";    
       htmlHorarios += htmlResult;
     }
     
