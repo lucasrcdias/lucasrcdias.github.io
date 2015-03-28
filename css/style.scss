@@ -267,12 +267,10 @@ button i {
       }
       .trajetos{
         @extend .horarios;
+        a{
+          display: block;
+        }
       }
-    }
-    .visible-info{
-      @include prefixo(border-radius, 0);
-      @include prefixo(border-top-left-radius, 4px);
-      @include prefixo(border-top-right-radius, 4px);
     }
     .more-infos{
       display: none;
@@ -609,6 +607,43 @@ button.back-to-top{
   background: $emerald;
 }
 
-.map-overlay{
-
+.message{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2em 1em;
+  z-index: 4;
+  .message-text{
+    font-weight: 300;
+    color: $white;
+  }
+  
+  .close-message{
+    @include prefixo(transition, .3s all ease);
+    @include prefixo(border-radius, 100%);
+    cursor: pointer;
+    position: fixed;
+    right: 1.2em;
+    bottom: 1.2em;    
+    border: 2px solid $white;
+    padding: .8em;
+    i{
+      font-size: 1.4em;
+      color: $white;
+    }
+    &:hover{
+      border-color: $youtube-darken-red;
+    }
+    &:hover > i{
+      color: $youtube-darken-red;
+    }
+  }
+}
+.success{
+  background-color: $emerald;
+}
+.error{
+  background-color: $youtube-red;
 }

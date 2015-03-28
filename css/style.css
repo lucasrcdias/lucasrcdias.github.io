@@ -252,22 +252,8 @@ button i {
         transition: 0.5s all ease; }
         .results .result .result-header .horarios:hover, .results .result .result-header .trajetos:hover {
           background-color: #2c3e50; }
-    .results .result .visible-info {
-      -webkit-border-radius: 0;
-      -moz-border-radius: 0;
-      -o-border-radius: 0;
-      -ms-border-radius: 0;
-      border-radius: 0;
-      -webkit-border-top-left-radius: 4px;
-      -moz-border-top-left-radius: 4px;
-      -o-border-top-left-radius: 4px;
-      -ms-border-top-left-radius: 4px;
-      border-top-left-radius: 4px;
-      -webkit-border-top-right-radius: 4px;
-      -moz-border-top-right-radius: 4px;
-      -o-border-top-right-radius: 4px;
-      -ms-border-top-right-radius: 4px;
-      border-top-right-radius: 4px; }
+      .results .result .result-header .trajetos a {
+        display: block; }
     .results .result .more-infos {
       display: none;
       background-color: #FFF;
@@ -564,5 +550,47 @@ button.back-to-top {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #2ecc71; }
+
+.message {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2em 1em;
+  z-index: 4; }
+  .message .message-text {
+    font-weight: 300;
+    color: #FFF; }
+  .message .close-message {
+    -webkit-transition: 0.3s all ease;
+    -moz-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    -ms-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    cursor: pointer;
+    position: fixed;
+    right: 1.2em;
+    bottom: 1.2em;
+    border: 2px solid #FFF;
+    padding: .8em; }
+    .message .close-message i {
+      font-size: 1.4em;
+      color: #FFF; }
+    .message .close-message:hover {
+      border-color: #800000; }
+    .message .close-message:hover > i {
+      color: #800000; }
+
+.success {
+  background-color: #2ecc71; }
+
+.error {
+  background-color: #bb0000; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,1 +1,33 @@
-{"linhas": [{"nome": "REPRESA / TERMINAL CENTRAL (RADIAL) O.S.O 37", "itinerario": "BAIRRO RIO DAS COBRAS**ESTR. JUCA CARVALHO**AV. RUI BARBOSA**RUA INDEPENDENCIA**RUA AUDEMO VENEZIANI**PONTE MINAS GERAIS**PRACA BANDEIRANTES**RUA CAP. ELISIARIO**AV. RUI BARBOSA**VD. DOS EXPEDICIONARIOS**RUA ANA EUFRASIA**AV. SAO JOSE**RUA FLAVIO B. MACHADO**AV. TEN. NEVIO BARACHO**TERMINAL CENTRAL", "numero": "101", "id": "101 - REPRESA / TERMINAL CENTRAL (RADIAL) O.S.O 37", "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004caff379173c17241f&msa=0&ie=UTF8&ll=-23.083089,-45.981737&spn=0.055238,0.072956&t=m&z=12&output=embed", "horarios": [{"horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:50(1)**06:00(2)**14:15(5)**18:45(7)****09:50(3)**17:15(6)**20:15****11:50(4)****21:30********23:40(8)**"}, {"horario": "Aos s\u00e1bados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****06:10(7)**14:40(7)**20:05(7)****09:00**17:30**23:20(8)****11:40(7)******"}, {"horario": "Aos domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****07:20(7)**13:10**19:00(7)****10:20(7)**16:10(7)**22:00**"}], "sentido": "REPRESA / TERMINAL CENTRAL ", "obs": "-"}, {"nome": "REPRESA / TERMINAL CENTRAL (RADIAL) O.S.O 37", "itinerario": "TERMINAL CENTRAL**RUA FLAVIO B. MACEDO**AV. TEN. NEVIO BARACHO**VD. TEN. JOAO ALVES CARDOSO**AV. OLIVO GOMES**AV. PRINCESA ISABEL**RUA MANOEL RODRIGUES DE MORAES**PONTE MINAS GERAIS**RUA AUDEMO VENEZIANI**RUA INDEPENDENCIA**AV. RUI BARBOSA**ESTR. JUCA CARVALHO**BAIRRO RIO DAS COBRAS", "numero": "101", "id": "101 - REPRESA / TERMINAL CENTRAL (RADIAL) O.S.O 37", "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004cb0063c6bb41e9bbf&msa=0&ie=UTF8&ll=-23.086995,-45.984845&spn=0.18507,0.19485&t=m&z=12&output=embed", "horarios": [{"horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**04:30(1)**08:00(1)**12:40(3)**18:40****10:20(2)**15:50**20:15******17:00(4)**23:00(5)**"}, {"horario": "Aos s\u00e1bados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**04:50(1)**07:50**13:20(1)**18:50(1)****10:20(1)**16:20**22:30(5)**"}, {"horario": "Aos domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****06:00(1)**12:00**20:40****09:00(1)**14:50(1)********17:50(1)****"}], "sentido": "TERMINAL CENTRAL / REPRESA", "obs": "-"}]}
+{
+  "linhas": [{
+    "nome": "REPRESA / TERMINAL CENTRAL (RADIAL) O.S.O 37",
+    "itinerario": "BAIRRO RIO DAS COBRAS**ESTR. JUCA CARVALHO**AV. RUI BARBOSA**RUA INDEPENDENCIA**RUA AUDEMO VENEZIANI**PONTE MINAS GERAIS**PRACA BANDEIRANTES**RUA CAP. ELISIARIO**AV. RUI BARBOSA**VD. DOS EXPEDICIONARIOS**RUA ANA EUFRASIA**AV. SAO JOSE**RUA FLAVIO B. MACHADO**AV. TEN. NEVIO BARACHO**TERMINAL CENTRAL",
+    "numero": "101",
+    "id": "101 - REPRESA / TERMINAL CENTRAL (RADIAL) O.S.O 37",
+    "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004caff379173c17241f&msa=0&ie=UTF8&ll=-23.083089,-45.981737&spn=0.055238,0.072956&t=m&z=12&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:50(1)**06:00(2)**14:15(5)**18:45(7)****09:50(3)**17:15(6)**20:15****11:50(4)****21:30********23:40(8)**"
+    }, {
+      "horario": "Aos s\u00e1bados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****06:10(7)**14:40(7)**20:05(7)****09:00**17:30**23:20(8)****11:40(7)******"
+    }, {
+      "horario": "Aos domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****07:20(7)**13:10**19:00(7)****10:20(7)**16:10(7)**22:00**"
+    }],
+    "sentido": "REPRESA / TERMINAL CENTRAL ",
+    "obs": "-"
+  }, {
+    "nome": "REPRESA / TERMINAL CENTRAL (RADIAL) O.S.O 37",
+    "itinerario": "TERMINAL CENTRAL**RUA FLAVIO B. MACEDO**AV. TEN. NEVIO BARACHO**VD. TEN. JOAO ALVES CARDOSO**AV. OLIVO GOMES**AV. PRINCESA ISABEL**RUA MANOEL RODRIGUES DE MORAES**PONTE MINAS GERAIS**RUA AUDEMO VENEZIANI**RUA INDEPENDENCIA**AV. RUI BARBOSA**ESTR. JUCA CARVALHO**BAIRRO RIO DAS COBRAS",
+    "numero": "101",
+    "id": "101 - REPRESA / TERMINAL CENTRAL (RADIAL) O.S.O 37",
+    "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004cb0063c6bb41e9bbf&msa=0&ie=UTF8&ll=-23.086995,-45.984845&spn=0.18507,0.19485&t=m&z=12&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**04:30(1)**08:00(1)**12:40(3)**18:40****10:20(2)**15:50**20:15******17:00(4)**23:00(5)**"
+    }, {
+      "horario": "Aos s\u00e1bados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**04:50(1)**07:50**13:20(1)**18:50(1)****10:20(1)**16:20**22:30(5)**"
+    }, {
+      "horario": "Aos domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****06:00(1)**12:00**20:40****09:00(1)**14:50(1)********17:50(1)****"
+    }],
+    "sentido": "TERMINAL CENTRAL / REPRESA",
+    "obs": "-"
+  }]
+}
