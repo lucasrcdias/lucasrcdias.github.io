@@ -9,41 +9,24 @@
   #{$p}: $v;
 }
 $concrete: #95a5a6;
-$asbestos: #7f8c8d;
-$peter-river: #2980b9;
-$belize-hole:#3498db;
-$emerald: #2ecc71;
-$nephritis: #27ae60;
 $wet-asphalt: #34495e;
 $midnight-blue: #2c3e50;
-$turquoise: #1abc9c;
-$green-sea: #16a085;
 $youtube-red: #bb0000;
 $youtube-darken-red: #800000;
+$asbestos: #7f8c8d;
+$emerald: #2ecc71;
 $white: #FFF;
-$clouds: #ecf0f1;
-$silver: #bdc3c7;
 $grey: #f1f1f1;
 $black: #000;
 $mid-black: #333;
 $linkedin-blue: #1b5480;
 $linkedin-blue-secondary: #287bbc;
-$header-content-bg-color: $peter-river;
-$nav-bg-color: $belize-hole;
-$input-bg-color: $white;
-$input-border-color: $silver;
-$input-border-color-focus: $midnight-blue;
-$search-button-bg-color: $emerald;
-$search-button-border-color: $nephritis;
-$search-button-bg-color-hover: $turquoise;
-$search-button-border-color-hover: $green-sea;
-$search-toggle-bg-color: $youtube-red;
-$search-toggle-bg-color-hover: $youtube-darken-red;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 body {
@@ -57,155 +40,126 @@ a{
   color: $white;
   text-decoration: none;
 }
-
-header.main {
-  z-index: 1;
+.header{
+  width: 100%;
   height: 100vh;
-  background-image: url('../img/main-bg.jpg');
-  background-repeat: no-repeat;
+  background-image: url(../img/main-bg.jpg);
+  background-position: center center;
   background-size: cover;
-  .wrapper {
-    z-index: 2;
-    .mask{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+  background-attachment: fixed;
+  &:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0, .8);
+  }
+  .header-content{
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    .header-text{
+      display: table-cell;
       height: 100%;
-      z-index: 1;
-      background-color: rgba(0,0,0,0.6);
-    }
-    .header-content {
-      h1, h2 {
-        color: $white;
-        display: block;
+      vertical-align: middle;
+      h1,
+      h2{
         font-family: 'Raleway', sans-serif;
-      }
-      h1.main-title {
         font-weight: 900;
+        color: $white;
       }
-      h2.main-subtitle {
-        font-size: 1.6em;
-        font-weight: 500;
+      h1{
+        font-size: 3em;
       }
-      .search-controls {
-        width: 100%;
-        text-align: center;
-        margin-top: 2em;
-        .controls {
-          margin: 0 auto;
-          overflow: hidden;
+      h2{
+        font-size: 1.2em;
+        margin-bottom: 1.4em;
+      }
+      .header-controls{
+        max-width: 600px;
+        margin: 0 auto;
+        overflow: hidden;
+        .input{
+          width: 100%;
+          padding: 1em;
+          border: 1px solid $concrete;
+          margin-bottom: 1em;
+          &:focus{
+            outline: none;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+          }
+        }
+        .button{
+          @include prefixo(transition, .5s all ease);
+          cursor: pointer;
+          border: 1px solid $concrete;
+          i{
+            margin-right: 10px;
+          }
+          &:hover{
+            background-color: $concrete;
+          }
+        }
+        .voice-button{
+          z-index: 3;
+          background-color: $youtube-red;
+          border: 1px solid $youtube-darken-red;
+          color: $white;
+          &:hover{
+            background-color: $youtube-darken-red;
+          }
         }
       }
     }
   }
 }
 
-.overlay {
+.overlay{
   display: none;
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 3;
-  .wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.9);
+  .voice-wrapper{    
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    h1 {
-      font-size: 3em;
-      font-family: 'Raleway', sans-serif;
-      color: $white;
-      margin-top: 2em;
+    .voice-content{
+      display: table-cell;
+      height: 100%;
+      vertical-align: middle;
+      .voice-text{
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 2em auto;
+        background-color: $white;
+        padding: 2em .5em;
+        h1{
+          display: none;
+          font-weight: 300;
+        }
+        i{
+          margin-right: 10px;
+          color: $youtube-red;
+        }
+      }
+      .voice-cancel{
+        font-weight: 700;
+        color: $white;
+        text-align: center;
+        cursor: pointer;
+      }
     }
   }
-}
-
-input[type="text"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: none;
-  background-color: $input-bg-color;
-  border-bottom: 2px solid $input-border-color;
-  padding: 1em 2em;
-  float: left;
-  width: 85%;
-  @include prefixo(transition, .3s all ease);
-  @include prefixo(border-top-left-radius, 30px);
-  @include prefixo(border-bottom-left-radius, 30px);
-  &:focus{
-    outline: none;
-    @include prefixo(box-shadow, inset 1px 2px 40px rgba(0, 0, 0, 0.2));
-  }
-}
-
-button {
-  @include prefixo(transition, .6s all ease);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: none;
-  cursor: pointer;
-  &:focus{
-    outline: none;
-  }
-}
-
-button.search-button {
-  width: 15%;
-  background-color: $search-button-bg-color;
-  border-bottom: 2px solid $search-button-border-color;
-  color: $white;
-  float: left;
-  padding: 1em;
-  @include prefixo(border-top-right-radius, 30px);
-  @include prefixo(border-bottom-right-radius, 30px);
-}
-
-.voice-search {
-  position: absolute;
-  bottom: 2em;
-  width: 72px;
-  height: 72px;
-  left: 50%;
-  margin-left: -36px;
-  z-index: 2;
-}
-
-.close{
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  i{
-    color: $white;
-    font-size: 2em;
-  }
-}
-
-div.clicked {
-  @include prefixo(transition, .5s all ease);
-  @include prefixo(transform, scale(2));
-  z-index: 3;
-  button{
-    @include prefixo(animation, blink-effect 1s infinite);
-  }
-}
-
-button.search-toggle {
-  @include prefixo(border-radius, 100%);
-  background-color: $search-toggle-bg-color;
-  padding: 2em 2.2em;
-  outline: none;
-  i {
-    color: $white;
-    font-size: 1.6em;
-  }
-  &:hover {
-    background-color: $youtube-darken-red;
-  }
-}
-
-button i {
-  color: $white;
 }
 
 .results{
@@ -225,16 +179,18 @@ button i {
   .legenda{
     @include prefixo(border-radius, 4px);
     width: 100%;
-    background-color: $concrete;
+    background-color: $asbestos;
     overflow: hidden;
-    border-bottom: 2px solid $asbestos;
+    border-bottom: 2px solid $concrete;
     margin-bottom: 2em;
     div{  
       float: left;
       min-height: 35px;
-      border-right: 1px solid $asbestos;
+      border-right: 1px solid $concrete;
       padding: 1em;
       color: $white;
+      font-size: 12px;
+      font-weight: 700;
       &:last-child{
         border-right: none;
       }
@@ -334,329 +290,6 @@ button i {
   margin: 0 auto;
 }
 
-.fixed-controls{
-  display: none;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-}
-
-button.show-controls{
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 3;
-}
-
-button.back-to-top{
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 3;
-  background-color: $belize-hole;
-  border-bottom: 2px solid $peter-river;
-  padding: 1em;
-  i{
-    font-size: 2em;
-  }
-}
-
-.footer{
-  display: none;
-  padding: 2em 0;
-  overflow: hidden;
-  background-color: $black;
-  .half{
-    padding: 1em;
-    color: $white;
-    a{
-      font-style: italic;
-      color: $linkedin-blue;
-      &:hover{
-        color: $linkedin-blue-secondary;
-      }
-    }
-    .author{
-      margin-bottom: 1em;
-      a{
-        padding: 0 1em;
-      }
-    }    
-  }
-  .authors{
-    text-align: right;
-  }
-}
-//smartphones
-@media screen and (max-width: 768px) {
-  .fixed-controls{
-    .controls{
-      input[type="text"]{width: 70%;}
-    }
-  }
-  .mask{display: none;}
-  .header-content {
-    z-index: 2;
-    text-align: center;
-    max-width: 95%;
-    margin: 0 auto;
-    padding: 5em 0;
-    h1.main-title {
-      font-size: 3em;
-    }
-    .controls {
-      max-width: 95%;
-    }
-  }
-  .horario{
-    width: 100%;
-  }
-  .container{
-    max-width: 95%;
-  }
-  .show-controls,
-  .back-to-top{
-    width: 15%;
-  }
-  .legenda{display: none;}
-  .result{
-    .result-header{      
-      background-color: $midnight-blue;
-      .linha{width: 30%; text-align: center; background-color: $midnight-blue;}
-      .horarios{
-        background-color: $wet-asphalt;
-        width: 50%;
-        cursor: pointer;
-        text-align: center;
-        span{margin-left: 5px;}
-      }
-      .trajetos{
-        background-color: $wet-asphalt;
-        width: 50%;
-        cursor: pointer;
-        text-align: center;
-        span{margin-left: 5px;}
-      }
-      .nome{width: 70%; background-color: $midnight-blue;}
-      .sentido{ width: 100%; background-color: $midnight-blue; text-align: center;}
-    }
-  }
-}
-//tablet portrait
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .wrapper {
-    max-width: 80%;
-    margin: 0 auto;
-    .header-content {
-      position: absolute;
-      width: 760px;
-      height: 176px;
-      top: 50%;
-      left: 50%;
-      margin-top: -88px;
-      margin-left: -380px;
-      z-index: 2;
-      text-align: center;
-      h1.main-title {
-        font-size: 3em;
-      }
-      .controls {
-        max-width: 95%;
-      }
-    }
-  }
-  .voice-search {
-    bottom: 6em;
-  }
-  .horario{
-    width: 50%;
-  }
-  
-  .result{
-    .result-header{
-      background-color: $midnight-blue;
-      .linha{width: 10%; text-align: center;}
-      .horarios{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
-      .trajetos{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
-      .nome{width: 35%;}
-      .sentido{width: 35%;}
-    }
-  }
-  
-  button.show-controls,
-  button.back-to-top{
-    width: 5%;
-  }
-  
-  .fixed-controls{
-    right: -6.5em;
-  }
-  
-  .footer{
-    .half{
-      width: 50%;
-      float: left;
-    }
-  }
-}
-//tablet landscape and higher
-@media screen and (min-width: 1024px) {
-  .wrapper {
-    z-index: 2;
-    display: table;
-    width: 100%;
-    height: 100vh;
-    &:before {
-      content: '';
-      display: inline-block;
-      height: 100%;
-      vertical-align: middle;
-    }
-    .header-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 960px;
-      height: 164px;
-      margin-top: -82px;
-      margin-left: -480px;
-      z-index: 2;
-      text-align: center;
-      h1.main-title {
-        font-size: 4em;
-      }
-      .controls {
-        max-width: 50%;
-      }
-    }
-  }
-  .horario{
-    width: 33%;
-  }
-  
-  .result{
-    .result-header{
-      background-color: $wet-asphalt;
-      .linha{width: 10%; text-align: center;}
-      .horarios{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
-      .trajetos{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
-      .nome{width: 35%;}
-      .sentido{width: 35%;}
-    }
-  }
-  
-  button.show-controls,
-  button.back-to-top{
-    width: 5%;
-  }
-  
-  .fixed-controls{
-    right: -6.5em;
-    .controls{
-    width: 50%;
-    float: right;
-    input[type="text"]{
-      width: 45%;
-    }
-  }
-}
-  .footer{
-    .half{
-      width: 50%;
-      float: left;
-    }
-  }
-}
-//animation
-@-webkit-keyframes blink-effect {
-  0% {
-    box-shadow: none;
-  }
-  10% {
-    box-shadow: 0 0 2px $youtube-red;
-  }
-  20% {
-    box-shadow: 0 0 4px $youtube-red;
-  }
-  30% {
-    box-shadow: 0 0 6px $youtube-red;
-  }
-  40% {
-    box-shadow: 0 0 8px $youtube-red;
-  }
-  50% {
-    box-shadow: 0 0 10px $youtube-red;
-  }
-  60% {
-    box-shadow: 0 0 8px $youtube-red;
-  }
-  70% {
-    box-shadow: 0 0 6px $youtube-red;
-  }
-  80% {
-    box-shadow: 0 0 4px $youtube-red;
-  }
-  90% {
-    box-shadow: 0 0 2px $youtube-red;
-  }
-  100% {
-    box-shadow: none;
-  }
-}
-
-@keyframes blink-effect {
-  0% {
-    box-shadow: none;
-  }
-  10% {
-    box-shadow: 0 0 2px $youtube-red;
-  }
-  20% {
-    box-shadow: 0 0 4px $youtube-red;
-  }
-  30% {
-    box-shadow: 0 0 6px $youtube-red;
-  }
-  40% {
-    box-shadow: 0 0 8px $youtube-red;
-  }
-  50% {
-    box-shadow: 0 0 10px $youtube-red;
-  }
-  60% {
-    box-shadow: 0 0 8px $youtube-red;
-  }
-  70% {
-    box-shadow: 0 0 6px $youtube-red;
-  }
-  80% {
-    box-shadow: 0 0 4px $youtube-red;
-  }
-  90% {
-    box-shadow: 0 0 2px $youtube-red;
-  }
-  100% {
-    box-shadow: none;
-  }
-}
-
-
-::-webkit-scrollbar {
-     width: 4px;
-}
-
-    /* Track */
-::-webkit-scrollbar-track {
-  background: $black;
-}
-
-    /* Handle */
-::-webkit-scrollbar-thumb {
-  background: $emerald;
-}
-
 .message{
   display: none;
   position: fixed;
@@ -691,9 +324,98 @@ button.back-to-top{
     }
   }
 }
+
 .success{
   background-color: $emerald;
 }
+
 .error{
   background-color: $youtube-red;
+}
+
+.footer{
+  background-color: $black;
+  padding: 2em 0;
+  text-align: center;
+  span{
+    color: $white;
+    margin-right: 1em;
+    a{
+      font-weight: 700;
+      color: $linkedin-blue;
+      padding: 0 .5em;
+      &:hover{
+        color: $linkedin-blue-secondary;
+      }
+    }
+  }
+}
+//smartphones ant tablet portrait
+@media screen and (max-width: 996px) {  
+  .horario{
+    width: 100%;
+  }
+  .container{
+    max-width: 95%;
+  }
+  .legenda{display: none;}
+  .result{
+    .result-header{      
+      background-color: $midnight-blue;
+      .linha{width: 30%; text-align: center; background-color: $midnight-blue;}
+      .horarios{
+        background-color: $wet-asphalt;
+        width: 50%;
+        cursor: pointer;
+        text-align: center;
+        span{margin-left: 5px;}
+      }
+      .trajetos{
+        background-color: $wet-asphalt;
+        width: 50%;
+        cursor: pointer;
+        text-align: center;
+        span{margin-left: 5px;}
+      }
+      .nome{width: 70%; background-color: $midnight-blue;}
+      .sentido{ width: 100%; background-color: $midnight-blue; text-align: center;}
+    }
+  }
+  .button{
+    width: 50%;
+    float: left;
+    padding: 1em;
+    margin-right: 0;
+  }
+  .footer{
+    span{
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+}
+//tablet landscape and higher
+@media screen and (min-width: 1024px) {
+  .horario{
+    width: 33%;
+  }
+  
+  .result{
+    .result-header{
+      background-color: $wet-asphalt;
+      .linha{width: 10%; text-align: center;}
+      .horarios{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
+      .trajetos{width: 10%; text-align: center; cursor: pointer; span{display: none;}}
+      .nome{width: 35%;}
+      .sentido{width: 35%;}
+    }
+  }
+  .input{
+    border-radius: 4px;
+  }
+  .button{
+    border-radius: 2px;
+    padding: 1em 2em;
+    margin-right: 1em;
+  }
 }

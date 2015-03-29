@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="utf-8">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -10,295 +9,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="stylesheet" href="css/style.css">
-  <!--
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">!-->
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <title>Projeto - IHC</title>
-  <!-- Icone !-->
-  <link rel="Shortcut Icon" href="images/icone.ico">
 </head>
-
 <body>
-  <div class="overlay voice-overlay">
-    <div class="close voice-close">
-      <span><i class="fa fa-close"></i></span>
-    </div>
-    <div class="wrapper">
-      <h1>Diga o número ou nome de uma linha!</h1>
-    </div>
-  </div>
-  <header class="main">
-    <div class="wrapper">
-      <div class="mask"></div>
-      <div class="header-content">
-        <h1 class="main-title">Nunca mais perca o ônibus!</h1>
-        <h2 class="main-subtitle">Todos os horários na palma da sua mão.</h2>
-        <div class="search-controls">
-          <div class="controls">
-            <input type="text" id="pesq" placeholder="Digite o número ou nome da linha">
-            <button class="search-button"><i class="fa fa-search"></i>
-            </button>
-          </div>
+  <div class="overlay">
+    <div class="voice-wrapper">
+      <div class="voice-content">
+        <div class="voice-text">
+          <h1 id="info_speak_now"><i class="fa fa-microphone"></i> Fale agora!</h1>
+          <h1 id="info_no_speech">Nenhuma voz detectada, talvez você precise <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+              ajustar seu microfone</a>!</h1>
+          <h1 id="info_no_microphone">
+            Nenhum microfone encontrado. Certifique-se de que tem um microfone instalado e as
+            <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+            configurações</a> estão corretas.</h1>
+          <h1 id="info_allow">Clique no botão "Permitir" acima para liberar o microfone.</h1>
+          <h1 id="info_denied">Permissão para usar o microfone negada.</h1>
+          <h1 id="info_blocked">A permissão para usar o microfone está bloqueada. Para mudar,
+            acesse: chrome://settings/contentExceptions#media-stream</h1>
+          <h1 id="info_upgrade">Web Speech API não é suportada por esse navegador.
+             Atualize para <a href="//www.google.com/chrome">Chrome</a>
+             versão 25 ou maior ou <span class="voice-cancel">pesquise por texto</span>.</h1>
+          <h2 id="final_span"></h2>
+          <h2 id="interim_span"></h2>
         </div>
+        <span class="voice-cancel">cancelar</span>
       </div>
     </div>
-    <div class="voice-search">
-      <button class="search-toggle" title="Pesquise por voz">
-        <i class="fa fa-microphone"></i>
-      </button>
+  </div>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-text">
+        <h1>Nunca mais perca seu ônibus!</h1>
+        <h2>Digite o número, nome ou itinerário (local ou rua) da linha</h2>
+        <div class="header-controls">
+          <input type="text" placeholder="Digite o número ou nome da linha" class="input search-input">
+          <div class="buttons"></div>
+          <button class="button search-button"><i class="fa fa-search"></i> Pesquisar</button>
+          <button class="button voice-button"><i class="fa fa-microphone"></i> Pesquisar por voz</button>
+        </div>
+      </div>
     </div>
   </header>
   <section class="results">
     <div class="container">
       <h1>Resultados para: <b id="pesq-query">200</b></h1>
       <header class="legenda">
-        <div class="linha">Linha</div>
-        <div class="nome">Nome da linha</div>
-        <div class="sentido">Sentido</div>
-        <div class="horarios">Horários</div>
-        <div class="trajetos">Trajetos</div>
+        <div class="linha">LINHA</div>
+        <div class="nome">NOME DA LINHA</div>
+        <div class="sentido">SENTIDO</div>
+        <div class="horarios">HORÁRIO</div>
+        <div class="trajetos">TRAJETOS</div>
       </header>
-      <div class="result">
-        <header class="result-header">
-          <div class="linha">200</div>
-          <div class="nome">Pq. Tecnológico / Fatec</div>
-          <div class="sentido">Terminal Central - Pq.Tecnológico</div>
-          <div class="horarios" data-more="1"><i class="fa fa-clock-o"></i><span>Horários</span>
-          </div>
-          <div class="trajetos"><i class="fa fa-map-marker"></i> <span>Trajetória</span>
-          </div>
-        </header>
-        <div class="more-infos" id="1">
-          <section class="horarios">
-            <div class="horario">
-              <h2>De segunda-feira a sexta-feira</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <td>0 às 6h</td>
-                    <td>6 às 12h</td>
-                    <td>12 às 18h</td>
-                    <td>18 às 24h</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td>06:00</td>
-                    <td>12:05</td>
-                    <td>18:15</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>06:45</td>
-                    <td>13:00</td>
-                    <td>18:40</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>07:00 (1)</td>
-                    <td>13:50</td>
-                    <td>21:25</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>07:15</td>
-                    <td>15:30</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>08:00</td>
-                    <td>16:05</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>08:35</td>
-                    <td>16:15</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>09:45</td>
-                    <td>17:40</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>11:00</td>
-                    <td>17:45 (1)</td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="horario">
-              <h2>De segunda-feira a sexta-feira</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <td>0 às 6h</td>
-                    <td>6 às 12h</td>
-                    <td>12 às 18h</td>
-                    <td>18 às 24h</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td>06:00</td>
-                    <td>12:05</td>
-                    <td>18:15</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>06:45</td>
-                    <td>13:00</td>
-                    <td>18:40</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>07:00 (1)</td>
-                    <td>13:50</td>
-                    <td>21:25</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>07:15</td>
-                    <td>15:30</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>08:00</td>
-                    <td>16:05</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>08:35</td>
-                    <td>16:15</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>09:45</td>
-                    <td>17:40</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>11:00</td>
-                    <td>17:45 (1)</td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="horario">
-              <h2>De segunda-feira a sexta-feira</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <td>0 às 6h</td>
-                    <td>6 às 12h</td>
-                    <td>12 às 18h</td>
-                    <td>18 às 24h</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td>06:00</td>
-                    <td>12:05</td>
-                    <td>18:15</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>06:45</td>
-                    <td>13:00</td>
-                    <td>18:40</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>07:00 (1)</td>
-                    <td>13:50</td>
-                    <td>21:25</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>07:15</td>
-                    <td>15:30</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>08:00</td>
-                    <td>16:05</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>08:35</td>
-                    <td>16:15</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>09:45</td>
-                    <td>17:40</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>11:00</td>
-                    <td>17:45 (1)</td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-        </div>
-      </div>
     </div>
   </section>
   <footer class="footer">
     <div class="container">
-      <div class="half">
-        <p>
-          O {projeto} trata-se de um projeto acadêmico desenvolvido para a disciplina <b>interação humano computador</b> da <a href="http://www.fatecsjc.edu.br" target="_blank">FATEC SJC</a>.
-          O objetivo da aplicação é disponibilizar o horário e a rota das linhas de ônibus com uma interface mais intuitiva e agradável, visando a usabilidade.<br><br>
-          <b>O {projeto} utiliza a lib <a href="#" target="_blank">doppler effect</a> como opção de navegação, <span>clique aqui para saber mais.</span></b>
-        </p>
-      </div>
-      <div class="half authors">
-        <div class="author">Lucas Ramos <a href="http://github.com/lucasrcdias" target="_blank">github</a> / <a href="#" target="_blank">linkedin</a></div>
-        <div class="author">Vinicius Lopes <a href="http://github.com/lucasrcdias" target="_blank">github</a> / <a href="#" target="_blank">linkedin</a></div>
-        <div class="author">Lucas Benedito <a href="http://github.com/lucasrcdias" target="_blank">github</a> / <a href="#" target="_blank">linkedin</a></div>
-      </div>
+      <span>Lucas Benedito <a href="https://github.com/LucasBenedito1" target="_blank">github</a></span>
+      
+      <span>Lucas Ramos <a href="http://github.com/lucasrcdias" target="_blank">github</a> / <a href="https://www.linkedin.com/pub/lucas-ramos/7b/aa6/6a" target="_blank">linkedin</a></span>      
+      
+      <span>Vinicius Lopes <a href="https://github.com/lopesvinicius" target="_blank">github</a> / <a href="https://www.linkedin.com/in/lopesvinicius" target="_blank">linkedin</a></span>
     </div>
   </footer>
-  <div class="overlay map-overlay">
-    <div class="close map-close">
-      <span><i class="fa fa-close"></i></span>
-    </div>
-    <div class="wrapper">
-      <h1 id="label-trajetoria"></h1>
-    </div>
-    <div class="map-wrapper">      
-    </div>
-  </div>  
   <div class="message error">
     <div class="close-message"><i class="fa fa-close"></i></div>
     <div class="container">
       <h2 class="message-text">Não encontramos resultados válidos para sua pesquisa!</h2>
     </div>
   </div>
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>!-->
   <script src="js/jquery.js"></script>
   <script src="js/app.js"></script>
 </body>
-
 </html>
