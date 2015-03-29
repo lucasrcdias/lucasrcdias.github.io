@@ -29,5 +29,113 @@
     }],
     "sentido": "TERMINAL CENTRAL / REPRESA",
     "obs": "-"
+  }, {
+    "nome": "JAGUARI / TERMINAL CENTRAL (CIRCULAR NO BAIRRO) O.S.O. 27",
+    "itinerario": "NAUTICA JAGUARI (N\u00ba 20570, ESTR. JAGUARI)**ESTR. JAGUARI**RETORNO EM FRENTE A SANTISTA ALIMENTOS**ESTR. JAGUARI**RUA BENEDITO PEREIRA LIMA**AV. DR. NUMA DE OLIVEIRA**RUA DR. OTHON DOS SANTOS MERCADANTE**RUA RICARDO GONCALVES**RUA JAGUARI**RUA FRANCISCO JOAO LEME**RUA PAULA NEY**RUA PIRAQUARA CLUB**AV. RUI BARBOSA**RUA ALZIRO LEBRAO**RUA AUDEMO VENEZIANI**PTE. MINAS GERAIS**PRACA BANDEIRANTES**RUA CAP. ELISARIO**AV. RUI BARBOSA**VD. DOS EXPEDICIONARIOS**RUA ANA EUFRASIA**AV. SAO JOSE**RUA FLAVIO B. MACEDO**AV. TTE. NEVIO BARACHO**PRACA PADRE JOAO**TERMINAL CENTRAL",
+    "numero": "102",
+    "id": "102 - JAGUARI / TERMINAL CENTRAL (CIRCULAR NO BAIRRO) O.S.O. 27",
+    "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004cb033b59be75d9265&msa=0&ie=UTF8&ll=-23.158853,-45.95091&spn=0.115674,0.224353&t=m&z=13&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**00:05**06:10(1)**13:10**18:00****06:30**14:00**19:00****07:20**15:00**21:20****08:10**17:00******10:10********11:50******"
+    }, {
+      "horario": "Aos s\u00e1bados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****06:10(1)**12:40**19:15****09:05**15:00**22:20******17:00****"
+    }, {
+      "horario": "Aos domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****06:20(1)**13:15**18:55****09:15**17:00**22:10****11:15******"
+    }],
+    "sentido": "JAGUARI / TERMINAL CENTRAL ",
+    "obs": "OS HORARIOS DAS PARTIDAS NO JAGUARI SAO APENAS PARA ORIENTACAO DOS USUARIOS."
+  }, {
+    "nome": "JAGUARI / TERMINAL CENTRAL (CIRCULAR NO BAIRRO) O.S.O. 27",
+    "itinerario": "TERMINAL CENTRAL**RUA FLAVIO B. MACEDO**AV. TTE. NEVIO BARACHO**VD. JOAO ALVES CARDOSO**AV. OLIVO GOMES**AV. PRINCESA ISABEL**RUA MANOEL RODRIGUES DE MORAES**PRACA ANCHIETA**PTE MINAS GERAIS**RUA AUDEMO VENEZIANI**RUA ALZIRO LEBRAO**AV. RUI BARBOSA**RUA PIRAQUARA CLUB**RUA PAULA NEY**RUA FRANCISCO JOAO LEME**RUA JAGUARI**RUA RICARDO GONCALVES**RUA DR. OTHON DOS SANTOS MERCADANTE**AV. DR. NUMA DE OLIVEIRA**RUA BENEDITO PEREIRA LIMA**ESTR. JAGUARI**RETORNO EM FRENTE A SANTISTA ALIMENTOS**ESTR. JAGUARI**NAUTICA JAGUARI (N\u00ba 20570, ESTR. JAGUARI)",
+    "numero": "102",
+    "id": "102 - JAGUARI / TERMINAL CENTRAL (CIRCULAR NO BAIRRO) O.S.O. 27",
+    "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004cb0346adde621d4ba&msa=0&ie=UTF8&ll=-23.159469,-45.950842&spn=0.114442,0.224217&t=m&z=13&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:10**07:10**12:20**18:00**05:30**09:10**13:10**20:20****11:00**14:10**23:15******16:15********17:00****"
+    }, {
+      "horario": "Aos s\u00e1bados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:10**08:05**14:00**18:15****11:40**16:00**21:20**"
+    }, {
+      "horario": "Aos domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:15**08:15**12:15**18:00****10:15**16:00**21:20**"
+    }],
+    "sentido": "TERMINAL CENTRAL / JAGUARI",
+    "obs": "-"
+  }, {
+    "nome": "COSTINHA / TERMINAL CENTRAL (RADIAL) O.S.O. 54",
+    "itinerario": "TERMINAL CENTRAL**RUA FLAVIO B. MACEDO**AV. TTE. NEVIO BARACHO**VD. TTE. JOAO ALVES CARDOSO**AV. OLIVO GOMES**AV. PRINC. ISABEL**RUA MANOEL RODRIGUES DE MORAES**PTE MINAS GERAIS**RUA AUDEMO VENEZIANI**ROD. SP-50**ESTR. DO BENGALAR",
+    "numero": "103",
+    "id": "103 - COSTINHA / TERMINAL CENTRAL (RADIAL) O.S.O. 54",
+    "gmaps": "https://maps.google.com.br/maps/ms?msa=0&msid=218151523826345683363.0004cb038be32a7ce0a0f&ie=UTF8&t=m&ll=-23.117015,-45.901508&spn=0.21935,0.199547&t=m&z=12&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:00(1)**06:25(2)**12:15(2)**18:40(3)**05:45(1)**07:25(2)**13:00(3)**19:15(2)****08:00(3)**13:35(1)**20:05(3)****08:50(2)**14:25(3)**21:05(1)****09:40(3)**15:20(1)**21:55(3)****10:20(1)**16:05(2)**22:35(2)****10:55(3)**17:00(3)**23:35(2)****11:30(4)**17:45(3)****"
+    }, {
+      "horario": "Aos s\u00e1bados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:40(1)**06:35(3)**12:30(3)**18:35(3)****07:50(3)**13:30(1)**20:00(1)****08:45(1)**14:25(3)**20:35(3)****10:20(1)**15:40(3)**22:00(1)****11:30(3)**16:15(1)**23:50(5)******17:40(1)****"
+    }, {
+      "horario": "Aos domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:40(1)**06:40(3)**12:40(3)**18:20(1)****07:40(3)**14:20(1)**20:20(1)****08:20(1)**16:20(3)**22:10(1)****09:20(3)****23:50(5)****10:40(1)********11:20(3)******"
+    }],
+    "sentido": "TERMINAL CENTRAL / COSTINHA",
+    "obs": "-"
+  }, {
+    "nome": "COSTINHA / TERMINAL CENTRAL (RADIAL) O.S.O. 54",
+    "itinerario": "...**ROD. SP-50**RUA AUDEMO VENEZIANI**PTE MINAS GERAIS**RUA CAP. ELISIARIO**AV. RUI BARBOSA**VD. DOS EXPEDICIONARIOS**RUA ANA EUFRASIA**AV. SAO JOSE**AV. MADRE TEREZA**RUA LUIZ JACINTO**PRACA ROTARY**RUA EUCLIDES MIRAGAIA**PRACA DR. MANOEL DE ABREU**AV. DR. ADHEMAR DE BARROS**AV. HEITOR VILLA LOBOS**AV. ENG. FRANCISCO JOSE LONGO**PCA CANDIDO DIAS CASTEJON**AV. DR. JOAO GUILHERMINO**PCA MAURICIO CURY**RUA DOLZANI RICARDO**RUA ANTONIO SAES**RUA FRANCISCO RAFAEL**RUA SIQUEIRA CAMPOS**PCA PADRE JOAO**TERMINAL CENTRAL",
+    "numero": "103",
+    "id": "103 - COSTINHA / TERMINAL CENTRAL (RADIAL) O.S.O. 54",
+    "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004cb0354818357b0de1&msa=0&ie=UTF8&ll=-23.116932,-45.891511&spn=0.219517,0.199554&t=m&z=12&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**04:30(1)**06:05(3)**15:35(2)****05:10(2)**06:10(4)**16:25(1)****05:30(1)**06:25(3)**17:20(6)******06:50(1)********07:25(1)********07:55(2)********08:25(1)********11:55(5)******"
+    }],
+    "sentido": "COSTINHA / JOSE LONGO",
+    "obs": "-"
+  }, {
+    "nome": "COSTINHA / TERMINAL CENTRAL (RADIAL) O.S.O. 54",
+    "itinerario": "ESTR. DO BENGALAR**ROD. SP-50**RUA AUDEMO VENEZIANI**PTE MINAS GERAIS**RUA CAP. ELISIARIO**AV. RUI BARBOSA**VD. DOS EXPEDICIONARIOS**RUA ANA EUFRASIA**AV. SAO JOSE**RUA FLAVIO B. MACEDO**AV. TTE. NEVIO BARACHO**PCA PADRE JOAO**TERMINAL CENTRAL",
+    "numero": "103",
+    "id": "103 - COSTINHA / TERMINAL CENTRAL (RADIAL) O.S.O. 54",
+    "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004cb037b4c10eff0918&msa=0&ie=UTF8&ll=-23.117628,-45.900192&spn=0.257655,0.528374&t=m&z=12&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****09:10(1)**12:10(1)**18:05(1)****09:55(2)**13:05(4)**18:35(4)****10:40(1)**13:20(2)**19:05(1)****11:35(3)**14:05(1)**19:25(4)******14:50(4)**19:55(1)********20:25(4)********21:25(1)********22:15(4)********23:05(1)********23:45(4)**"
+    }, {
+      "horario": "Aos s\u00e1bados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**00:45(1)**06:40(4)**12:30(1)**18:40(4)**04:30(5)**07:30(1)**13:25(1)**19:35(1)**05:20(5)**08:45(1)**14:30(4)**21:00(4)****10:00(1)**15:15(1)**21:30(1)****11:20(4)**16:35(1)**22:55(4)******17:15(6)****"
+    }, {
+      "horario": "Aos domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**00:40(1)**06:40(4)**12:10(1)**19:20(4)**04:30(5)**07:30(1)**13:30(1)**21:10(4)**05:50(1)**08:30(7)**15:20(4)**23:00(4)****09:20(4)**17:10(7)******10:10(1)********11:40(4)******"
+    }],
+    "sentido": "COSTINHA / TERMINAL CENTRAL",
+    "obs": "-"
+  }, {
+    "nome": "COSTINHA / TERMINAL CENTRAL (RADIAL) O.S.O. 54",
+    "itinerario": "AV. ENG. FRANCISCO JOSE LONGO**PRACA CANDIDO DIAS CASTEJON**AV. DR. JOAO GUILHERMINO - RUA ANTONIO SAES - RUA FRANCISCO RAFAEL**RUA SIQUEIRA CAMPOS**PRACA PADRE JOAO - AV. TTE. NEVIO BARACHO**VD. TTE. JOAO ALVES CARDOSO**AV. OLIVO GOMES**AV. PRINC. ISABEL**RUA MANOEL RODRIGUES DE MORAES**PTE MINAS GERAIS**RUA AUDEMO VENEZIANI**ROD. SP-50**ESTR. DO BENGALAR...",
+    "numero": "103",
+    "id": "103 - COSTINHA / TERMINAL CENTRAL (RADIAL) O.S.O. 54",
+    "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004cb0383a74cc4748de&msa=0&ie=UTF8&ll=-23.117015,-45.891508&spn=0.21935,0.199547&t=m&z=12&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h******17:10(1)********17:55(2)****"
+    }],
+    "sentido": "JOSE LONGO / COSTINHA",
+    "obs": "-"
+  }, {
+    "nome": "VARGEM GRANDE / TERMINAL CENTRAL O.S.O. 18",
+    "itinerario": "ESTR. MUNICIPAL PEDRO MOACIR DE ALMEIDA (ESQUINA COM A RUA PINTASSILGO)**FAZENDA STA. CLARA**CLUBE LUSO BRASILEIRO**ESTR. MUNICIPAL PEDRO MOACIR DE ALMEIDA**RUA MARIA CANDIDA DELGADO**PCA SAO MARCOS**RUA JOSE SILVERIO DE SOUZA**ROD. SP-50**RUA AUDEMO VENEZIANI**PTE MINAS GERAIS**RUA CAP. ELISIARIO**AV. RUI BARBOSA**VD. DOS EXPEDICIONARIOS**RUA ANA EUFRASIA**AV. SAO JOSE**RUA FLAVIO B. MACEDO**AV. TTE. NEVIO BARACHO**PCA PADRE JOAO**TERMINAL CENTRAL",
+    "numero": "104",
+    "id": "104 - VARGEM GRANDE / TERMINAL CENTRAL O.S.O. 18",
+    "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004cb03d21a10dcb7a9c&msa=0&ie=UTF8&t=m&ll=-23.14275,-45.872224&spn=0.167879,0.160979&t=m&z=13&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****06:30**12:50**18:20****09:30****22:50**"
+    }, {
+      "horario": "Aos s\u00e1bados, domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h****06:30**12:50**18:20****09:30******"
+    }],
+    "sentido": "VARGEM GRANDE / TERMINAL CENTRAL",
+    "obs": "-"
+  }, {
+    "nome": "VARGEM GRANDE / TERMINAL CENTRAL O.S.O. 18",
+    "itinerario": "TERMINAL CENTRAL**RUA FLAVIO B. MACEDO**AV. TTE. NEVIO BARACHO**VD. TTE. JOAO ALVES CARDOSO**AV. OLIVO GOMES**AV. PRINCESA ISABEL**RUA MANOEL RODRIGUES DE MORAES**PTE MINAS GERAIS**RUA AUDEMO VENEZIANI**ROD. SP-50**RUA JOSE SILVERIO DE SOUZA**PCA SAO MARCOS**RUA MARIA CANDIDA DELGADO**ESTR. MUNICIPAL PEDRO MOACIR DE ALMEIDA**CLUBE LUSO BRASILEIRO**FAZENDA STA. CLARA**ESTR. MUNICIPAL PEDRO MOACIR DE ALMEIDA (ESQUINA COM A RUA PINTASSILGO)",
+    "numero": "104",
+    "id": "104 - VARGEM GRANDE / TERMINAL CENTRAL O.S.O. 18",
+    "gmaps": "https://maps.google.com.br/maps/ms?msid=218151523826345683363.0004cb03cdc3b4850833d&msa=0&ie=UTF8&t=m&ll=-23.142768,-45.872224&spn=0.167845,0.160979&t=m&z=13&output=embed",
+    "horarios": [{
+      "horario": "De segunda-feira a sexta-feira**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:50**08:50**12:10**22:10******17:40****"
+    }, {
+      "horario": "Aos s\u00e1bados, domingos e feriados**0 \u00e0s 6h**6 \u00e0s 12h**12 \u00e0s 18h**18 \u00e0s 24h**05:50**08:50**12:10********17:40****"
+    }],
+    "sentido": "TERMINAL CENTRAL / VARGEM GRANDE",
+    "obs": "-"
   }]
 }
