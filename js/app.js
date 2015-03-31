@@ -70,6 +70,7 @@ $(function () {
   }
 
   function search(s) {
+    s = siglas(s); //coloca as siglas no lugar das palavras -> avenida = av.
     $(".result").remove();
     var contResult = 0,
       linhas = $.getJSON("linhas.json", function (data) {
@@ -135,7 +136,6 @@ $(function () {
 
   //todo o código para reconhecimento de voz
 
-  showInfo('info_start');
   var final_transcript = '';
   var recognizing = false;
   var ignore_onend;
@@ -154,6 +154,10 @@ $(function () {
   function linebreak(s) {
     return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
   }
+  
+  function siglas(s){
+    return s.toLowerCase().replace('jardim','jd.').replace('avenida','av.').replace('engenheiro','eng.').replace('vila','vl.').replace('parque','pq.').replace('doutor','dr').replace('bosque','bq.').replace('chácaras','ch.').replace('chácara','ch.').replace('residencial','res.').replace('francisco','fco.').replace('viaduto','vd.').replace('tenente','tte.').replace('tenente','ten.').replace('ponte','pte.').replace('estrada','estr.').replace('princesa','princ.').toUpperCase();
+  }
   var first_char = /\S/;
 
   function capitalize(s) {
@@ -163,11 +167,11 @@ $(function () {
   }
 
   function showInfo(s) {
-    $(".overlay h1").fadeOut("fast");
-    if (s)
-      $("#" + s).fadeIn();
-    else
-      $("#" + s).fadeOut();
+    $(".overlay h1").fadeOut("fast",function(){
+      var el = $("#"+s);
+      if (el) el.fadeIn();
+    });
+    
   }
 
   if (!('webkitSpeechRecognition' in window)) {
