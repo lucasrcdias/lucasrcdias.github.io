@@ -96,12 +96,13 @@ a{
         .button{
           @include prefixo(transition, .5s all ease);
           cursor: pointer;
-          border: 1px solid $concrete;
+          background-color: $white;
+          border: 1px solid $grey;
           i{
             margin-right: 10px;
           }
           &:hover{
-            background-color: $concrete;
+            background-color: $grey;
           }
         }
         .voice-button{
@@ -146,6 +147,10 @@ a{
         h1{
           display: none;
           font-weight: 300;
+          a{
+            color: $black;
+            font-weight: 700;
+          }
         }
         i{
           margin-right: 10px;

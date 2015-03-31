@@ -142,10 +142,11 @@ $(function () {
   var start_timestamp;
 
 
-
+  var voiceAvailable = true;
   function upgrade() {
-    start_button.style.visibility = 'hidden';
-    showInfo('info_upgrade');
+    $(".voice-button").fadeOut();
+    $(".search-button").css("width", '100%');
+    voiceAvailable = false;
   }
   var two_line = /\n\n/g;
   var one_line = /\n/g;
@@ -161,29 +162,12 @@ $(function () {
     });
   }
 
-  function startButton(event) {
-    if (recognizing) {
-      recognition.stop();
-      return;
-    }
-    final_transcript = '';
-    recognition.lang = "pt-BR";
-    recognition.start();
-    ignore_onend = false;
-    final_span.innerHTML = '';
-    interim_span.innerHTML = '';
-    showInfo('info_allow');
-    showButtons('none');
-    start_timestamp = event.timeStamp;
-  }
-
   function showInfo(s) {
-    $(".overlay h1").fadeOut();
+    $(".overlay h1").fadeOut("fast");
     if (s)
       $("#" + s).fadeIn();
     else
       $("#" + s).fadeOut();
-
   }
 
   if (!('webkitSpeechRecognition' in window)) {
@@ -229,11 +213,10 @@ $(function () {
     recognition.onresult = function (event) {
       var interim_transcript = '';
       for (var i = event.resultIndex; i < event.results.length; ++i) {
-        if (event.results[i].isFinal) {
+        if (event.results[i].isFinal)
           final_transcript += event.results[i][0].transcript;
-        } else {
-          interim_transcript += event.results[i][0].transcript;
-        }
+        else
+          interim_transcript += event.results[i][0].transcript;        
       }
       final_transcript = capitalize(final_transcript);
       final_span.innerHTML = linebreak(final_transcript);
@@ -243,18 +226,20 @@ $(function () {
 
   $(".voice-button").click(function () {
     $(".overlay").fadeIn();
-    if (recognizing) {
-      recognition.stop();
-      return;
+    if (voiceAvailable) {
+      if (recognizing) {
+        recognition.stop();
+        return;
+      }
+      final_transcript = '';
+      recognition.lang = "pt-BR";
+      recognition.start();
+      ignore_onend = false;
+      final_span.innerHTML = '';
+      interim_span.innerHTML = '';
+      showInfo('info_allow');
+      start_timestamp = event.timeStamp;
     }
-    final_transcript = '';
-    recognition.lang = "pt-BR";
-    recognition.start();
-    ignore_onend = false;
-    final_span.innerHTML = '';
-    interim_span.innerHTML = '';
-    showInfo('info_allow');
-    start_timestamp = event.timeStamp;
   });
   $(".voice-cancel").click(function () {
     $(".overlay").fadeOut();

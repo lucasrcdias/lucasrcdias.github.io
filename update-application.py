@@ -46,7 +46,7 @@ def readAll(meio_transporte, n):
         itinerario = itinerario
         obs = infos[1]
         horarios = infos[2]
-        main_json += buildJson(id.replace('–','-'), numero, nome.replace('–','-'), sentido.replace('–','-'), itinerario.replace('–','-'), obs.replace('–','-'), mapa, horarios) + ','
+        main_json += buildJson(id, numero, nome, sentido, itinerario, obs, mapa, horarios) + ','
         break
       col = col + 1
       
@@ -162,10 +162,6 @@ onibus = '<table class="textosm" cellspacing="2" cellpadding="4" border="0" id="
 alternativo = '<table class="textosm" cellspacing="2" cellpadding="4" border="0" id="ctl00_ctl00_ctl00_ctl00_ContentPlaceHolderDefault_modelo_master_meio_modelo_duas_colunas_meio_ctl02_horario_itinerario_onibus_layTab_8_dtgListaAlternativo" style="background-color:White;border-color:White;border-width:0px;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;width:100%;">'
 
 readAll(onibus, 20)
-
-#with open('linhas.txt', 'w') as txt:
-#  txt.write(main_json.decode('utf-8'))
-#  txt.close
 
 main_json = main_json[:- 1] + ']}'
 main_json = json.loads(main_json)

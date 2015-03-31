@@ -70,11 +70,12 @@ a {
           -ms-transition: 0.5s all ease;
           transition: 0.5s all ease;
           cursor: pointer;
-          border: 1px solid #95a5a6; }
+          background-color: #FFF;
+          border: 1px solid #f1f1f1; }
           .header .header-content .header-text .header-controls .button i {
             margin-right: 10px; }
           .header .header-content .header-text .header-controls .button:hover {
-            background-color: #95a5a6; }
+            background-color: #f1f1f1; }
         .header .header-content .header-text .header-controls .voice-button {
           z-index: 3;
           background-color: #bb0000;
@@ -111,6 +112,9 @@ a {
         .overlay .voice-wrapper .voice-content .voice-text h1 {
           display: none;
           font-weight: 300; }
+          .overlay .voice-wrapper .voice-content .voice-text h1 a {
+            color: #000;
+            font-weight: 700; }
         .overlay .voice-wrapper .voice-content .voice-text i {
           margin-right: 10px;
           color: #bb0000; }
