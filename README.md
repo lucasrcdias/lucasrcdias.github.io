@@ -16,3 +16,10 @@ projeto.
 Lucas Benedito <a href="https://github.com/LucasBenedito1">github</a><br>
 Lucas Ramos <a href="http://github.com/lucasrcdias">github</a> / <a href="https://www.linkedin.com/pub/lucas-ramos/7b/aa6/6a">linkedin</a><br>
 Vinicius Lopes <a href="https://github.com/lopesvinicius">github</a> / <a href="https://www.linkedin.com/in/lopesvinicius">linkedin</a><br>
+
+<h1>Futuras atualizações</h1>
+Melhoria da interface;<br>
+Gerenciar favoritos;<br>
+Criação de aplicativo mobile (Android);<br>
+Criação de aplicativo mobile (Outras plataformas);<br>
+
