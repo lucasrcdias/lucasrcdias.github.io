@@ -10,7 +10,9 @@ Via javascript, percorremos o arquivo .json e mostramos somente as informações
 O código fonte está livre para estudos e para futuros estudantes da Fatec SJC que possam usar como base de algum outro
 projeto. 
 
-<b>Link para a aplicação: <a href="http://lucasrcdias.github.io/">IHC - Fatec SJC 2015</a></b>
+<b>Link para a aplicação: <a href="http://lucasrcdias.github.io/">IHC - Fatec SJC 2015</a></b><br>
+<b>Aplicativo para Android: <a href="https://build.phonegap.com/apps/1407702/download/android/?qr_key=fdPnF91MTm3_yFBJHik1">Download .apk</a></b>
+<img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=https://build.phonegap.com/apps/1407702/install/fdPnF91MTm3_yFBJHik1&chld=L|1&choe=UTF-8" alt="QRCODE - Download .apk">
 <br>
 <h1>Integrantes</h1>
 Lucas Benedito <a href="https://github.com/LucasBenedito1">github</a><br>
