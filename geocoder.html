@@ -1,0 +1,46 @@
+<!doctype HTML>
+<html ng-app="app">
+  <head>
+    <title>Ng geocoder test</title>
+    <!-- Maps -->
+    <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDWMyyMeNbMq5DvhKu-6-jKD0rPIJUMLY8"></script>
+    <!-- NG -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/zttdesignlite.js"></script>
+
+    <!-- NG geocoder -->
+    <script src="js/ng-geocoder.js"></script>
+
+    <link rel="stylesheet" href="css/zttdesignlite.css">
+    <link rel="stylesheet" href="css/ng-geocoder.css"/>
+  </head>
+  <body ng-controller="ctrl as vm">
+    <form method="get" action="home.html">
+      <div class="ztt-form-group">
+        <div class="ztt-form-group__wrapper ztt-form-group__wrapper">
+          <div ng-geocoder="vm.result" min-length="3" input-id="1" text-searching="Procurando..." text-no-results="Nenhum endereço encontrado :(" input-class="ztt-form-group__input" max-height="300px" template-url="template.html"></div>
+          <label class="ztt-form-group__label ztt-form-group__label--floating" for="1">Sua cidade</label>
+        </div>
+      </div>
+    </form>
+
+    <pre ng-bind="vm.result | json"></pre>
+
+    <script>
+      (function () {
+        angular.module("app", ['zttDesignLite', 'ng-geocoder']);
+      })();
+
+      (function () {
+        angular.module("app")
+          .controller("ctrl", ctrl);
+
+        function ctrl () {
+          var vm = this;
+
+          vm.result = {};
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<div class="ng-geocoder">
+  <input id="{{ inputId }}" placeholder="{{ placeholder }}" class="ng-geocoder__input" type="text" ng-model="query" ng-class="inputClass" autocomplete="off" ztt-input=""/>
+
+  <ul class="ng-geocoder__list" ng-show="displayList()" ng-style="{ 'max-height': maxHeight || '250px' }">
+    <li class="ng-geocoder__list__item" ng-repeat="result in results" ng-class="{ 'ng-geocoder__list__item--focus': index === $index }" ng-click="selectItem($index)">
+      <strong class="ng-geocoder__list__item__text" ng-bind="result.formatted_address" tabindex="{{ $index }}"></strong>
+    </li>
+    <li class="ng-geocoder__list__item ng-geocoder__list__item--searching" ng-if="isSearching">
+      <strong class="ng-geocoder__list__item__text" ng-bind="textSearching"></strong>
+    </li>
+    <li class="ng-geocoder__list__item ng-geocoder__list__item--empty" ng-if="isEmpty">
+      <strong class="ng-geocoder__list__item__text" ng-bind="textNoResults"></strong>
+    </li>
+  </ul>
+</div>
